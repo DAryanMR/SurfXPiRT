@@ -1,4 +1,4 @@
-# SurfXPiRT (My version of Debian 12 installation scripts for Surface RT. )
+# SurfXPiRT (My version of Debian 12 for the Surface RT )
 
 I'll attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
