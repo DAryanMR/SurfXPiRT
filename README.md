@@ -20,6 +20,7 @@ A lot of tweaks are still left undone, I'll find some of which are  to be tweake
 - Install and setup xcompmgr to start on boot (If you download the boot files now you won't have to do it, the scripts have been updated to do it automatically)
 - Run 'xinput_calibrator' without quotes and setup touchscreen calibration 
 - Open and configure Onboard (On screen keyboard)
+- Enable virtual keyboard for xscreensaver lock   (Still not implemented)
 
 Notes: 
 1. Try using chromium browser with it's default settings first before using the settings that I've shown, restart chromium after enabling each feature to check what impact it has. There should also be a directory in your Desktop named standalone-apps, where you'll find a desktop app for chromium-lightweight, try that out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run.
