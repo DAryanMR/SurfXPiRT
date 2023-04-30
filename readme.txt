@@ -1,0 +1,1 @@
+This is my version of Debian 12 (Bookworm) for the Surface RT

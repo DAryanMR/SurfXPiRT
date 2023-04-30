@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Chromium Lightweight
+Comment=Modified chromium for Surface RT (Loonix)
+Exec=/usr/local/bin/chromium-lightweight %U
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=chromium
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;application/x-mimearchive;x-s>
+StartupWMClass=chromium
+StartupNotify=true
+Keywords=browser

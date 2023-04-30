@@ -1,0 +1,11 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+#auto mlan0
+allow-hotplug mlan0
+
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf

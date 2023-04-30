@@ -1,0 +1,10 @@
+[Unit]
+Description=Unblock RFKILL on boot
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/rfkill unblock wifi
+
+[Install]
+WantedBy=multi-user.target
