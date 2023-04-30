@@ -3,9 +3,6 @@
 I'll attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
 
-The one, The true, The only.. 
-＿|￣|○      Debian 
-
 Supported features: WiFi, Bluetooth, HWA, VLC, WebGL etc.
 
 Pre-requisites: Golden Keys & Yahallo Installed (Secure boot disabled)
