@@ -19,7 +19,7 @@ echo ""
 echo "Started query for packages...."
 echo ""
 echo ""
-apt-get -y install xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman* software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager  libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms;
+apt-get -y install xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman* software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager  libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms;
 echo ""
 echo ""
 echo "Packages installed!"
@@ -49,6 +49,15 @@ echo ""
 
 # Copying daisy.mp4 to test if vlc works
 mkdir -p /home/pi/Videos && cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos
+
+# Remove previous interfaces file and update it
+rm -rf /etc/network/interfaces
+cp /boot/firmware/opt/interfaces /etc/network/
+chmod +x /etc/network/interfaces
+
+# Copying touchscreen conf to /etc/X11/xorg.conf.d/ & making it executable
+cp /boot/firmware/opt/01-touchscreen.conf /etc/X11/xorg.conf.d/
+chmod +x /etc/X11/xorg.conf.d/01-touchscreen.conf
 
 # Copying rt-wifi-cli.desktop to /usr/share/applications
 cp /boot/firmware/opt/rt-wifi-cli.desktop /usr/share/applications
@@ -92,6 +101,22 @@ rm -rf /etc/sudoers
 # Copying modified /etc/sudoers to run the wifi client without password
 cp /boot/firmware/opt/sudoers /etc/sudoers
 
+### Alternative to /etc/rc.local because it doesn't work by default 
+
+# Copy rfkill-unblock.service to /etc/systemd/system/
+#echo "Copying rfkill-unblock services to systemd" 
+#cp /boot/firmware/opt/rfkill-unblock.service /etc/systemd/system/
+
+# Copy my-rc-local.service to /etc/systemd/system/
+#cp /boot/firmware/opt/my-rc-local.service /etc/systemd/system/
+
+# Copy wpa_supplicant.service to /etc/systemd/system/
+cp /boot/firmware/opt/wpa_supplicant.service /etc/systemd/system/
+
+# Copy rc-local.sh to /usr/local/bin/  and make it executable
+#cp /boot/firmware/opt/rc-local.sh /usr/local/bin/ 
+#chmod +x /usr/local/bin/rc-local.sh
+
 # Unblock wifi
 #echo "Unblocking wifi"
 #rfkill unblock wifi;
@@ -132,22 +157,6 @@ chmod +x /etc/init.d/on-start.sh
 
 # Create symlinks
 update-rc.d on-start.sh defaults
-
-### Alternative to /etc/rc.local because it doesn't work by default 
-
-# Copy rfkill-unblock.service to /etc/systemd/system/
-#echo "Copying rfkill-unblock services to systemd" 
-#cp /boot/firmware/opt/rfkill-unblock.service /etc/systemd/system/
-
-# Copy my-rc-local.service to /etc/systemd/system/
-#cp /boot/firmware/opt/my-rc-local.service /etc/systemd/system/
-
-# Copy wpa_supplicant.service to /etc/systemd/system/
-cp /boot/firmware/opt/wpa_supplicant.service /etc/systemd/system/
-
-# Copy rc-local.sh to /usr/local/bin/  and make it executable
-#cp /boot/firmware/opt/rc-local.sh /usr/local/bin/ 
-#chmod +x /usr/local/bin/rc-local.sh
 #####################################################################################################################################################################
 
 
