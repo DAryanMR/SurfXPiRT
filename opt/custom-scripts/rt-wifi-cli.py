@@ -89,9 +89,6 @@ network={{
     key_mgmt=WPA-PSK
     psk="{password}"
     priority=1
-    proactive_key_caching=0
-    bgscan="simple:30:-65:300"
-    id_str="mlan0"
 }}
 '''
             with open("/etc/wpa_supplicant/wpa_supplicant.conf", "w") as f:

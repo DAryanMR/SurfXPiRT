@@ -21,9 +21,6 @@ network_block="network={
     key_mgmt=WPA-PSK
     psk=\"$psk\"
     priority=1
-    proactive_key_caching=0
-    bgscan="simple:30:-65:300"
-    id_str="mlan0"
 }";
 
 # Add network block to the end of wpa conf

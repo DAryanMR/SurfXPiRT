@@ -72,7 +72,7 @@ cp /boot/firmware/opt/chromium-lightweight.desktop /usr/share/applications
 chmod +x /usr/share/applications/chromium-lightweight.desktop
 
 # Copying chromium-lightweight script to /usr/local/bin/
-cp /boot/firmware/chromium-lightweight /usr/local/bin/
+cp /boot/firmware/opt/chromium-lightweight /usr/local/bin/
 
 # exec rights
 # Now you can run  ->  chromium-lightweight  <- from anywhere in the terminal to launch this script
