@@ -2,7 +2,7 @@
 
 # Install vulkan for hardware acceleration
 # Remove previous install/configs
-#rm -rf /home/pi/mesa_vulkan;
+rm -rf /home/pi/mesa_vulkan;
 apt purge meson -y;
 pip3 install meson --break-system-packages;
 pip3 install mako --break-system-packages;
