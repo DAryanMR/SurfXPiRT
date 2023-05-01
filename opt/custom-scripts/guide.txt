@@ -1,0 +1,10 @@
+
+
+### Installation Serial of scripts:
+1. load-drivers.sh
+2. wifi-setup.sh
+3. install-packages.sh
+4. install-vulkan.sh
+5. clone-disk.sh 
+
+### //In dept walkthrough will be added here//
