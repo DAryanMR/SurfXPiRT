@@ -17,7 +17,7 @@ You can check the introductory video below in the tutorial's description, I've t
 You might notice some bugs here and there as the scripts were written on a rush, but I'm constantly working on their improvements. In the meanwhile, use it to discover what it can do. I even played Chocolate Doom for a while. 
 
 A lot of tweaks are still left undone, I'll find some of which are  to be tweaked and put them on a video or text-form.
-- Install and setup xcompmgr to start on boot (If you download the boot files now you won't have to do it, the scripts have been updated to do it automatically)
+- Install and setup xcompmgr to start on boot (If you download the boot files now you won't have to install it, the scripts have been updated to do it automatically, just enable it to run on startup and set it up as default composition manager)
 - Run 'xinput_calibrator' without quotes and setup touchscreen calibration 
 - Open and configure Onboard (On screen keyboard)
 - Enable virtual keyboard for xscreensaver lock   (Still not implemented) Screen can be brought back from locked state without physical keyboard but if you suspend the system then you'll need a keyboard to unlock it again. :(
