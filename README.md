@@ -22,6 +22,9 @@ A lot of tweaks are still left undone, I'll find some of which are  to be tweake
 - Open and configure Onboard (On screen keyboard)
 - Enable virtual keyboard for xscreensaver lock   (Still not implemented) Screen can be brought back from locked state without physical keyboard but if you suspend the system then you'll need a keyboard to unlock it again. :(
 
+Pro Tip: Use it in portrait mode for best standalone performance:
+Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
+
 Notes: 
 1. If you navigate to menu -> Internet , you'll find chromium-lightweight, I've highly optimized it to deliver the best performance, it runs websites on Android 9's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;)    [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
 2. Videos on youtube can be streamed at 360p max, however, 240p reduces stress substantially. Looking for workarounds.. use chromium-lightweight, it performs pretty well and I'm working on improvements.
