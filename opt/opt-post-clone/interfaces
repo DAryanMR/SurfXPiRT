@@ -1,0 +1,15 @@
+# interfaces(5) file used by networking(8) daemon
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The wireless network interface
+auto mlan0
+iface mlan0 inet dhcp
+    wireless-power off
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+    autoconnect-retries 5
+    autoconnect-delay 10
+
+allow-hotplug mlan0

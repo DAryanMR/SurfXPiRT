@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XCompmgr
+Comment=XCompmgr --a light compositor
+Exec=xcompmgr
+Terminal=false
+Type=Application
+OnlyShowIn=XFCE,LXDE

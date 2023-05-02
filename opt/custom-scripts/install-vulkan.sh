@@ -1,5 +1,5 @@
 #! /bin/sh
-
+####################################################################################
 # Install vulkan for hardware acceleration
 # Remove previous install/configs
 rm -rf /home/pi/mesa_vulkan;
@@ -17,5 +17,5 @@ ninja -C build install;
 echo ""
 echo ""
 echo "Vulkan Installed successfully, reboot now"
-
+####################################################################################
 exit 0

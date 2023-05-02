@@ -1,0 +1,39 @@
+
+#! /bin/bash
+
+# 1st version
+# Has openGL issues
+#chromium --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --disable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-remote-fonts --disable-remote-playback-api --disable-background-timer-throttling --disable-notifications --disable-overlay-scrollbar --enable-fast-unload --enable-low-res-tiling --enable-threaded-compositing --enable-zero-copy --num-raster-threads=4 --profiler-timing=0 --use-gl=egl-gles2 --disable-software-rasterizer --disable-gpu-vsync --disable-smooth-scrolling --disable-pinch --disable-pull-to-refresh-effect --disk-cache-dir=/dev/null
+
+# 2nd version
+# Disables webgl, opengl
+# not good
+#chromium --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --disable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --disable-gpu --enable-features=RendererCodeIntegrity
+
+
+# 3rd version
+# Somewhat okayish
+#chromium --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --enable-features=RendererCodeIntegrity --disable-site-isolation-trials
+
+# 4th version
+# uses partial webgl
+#chromium --disable-background-networking --force-effective-connection-type=2 --disable-software-rasterizer --enable-fast-unload --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --use-gl=desktop --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist
+#chromium --disable-background-networking --force-effective-connection-type=2  --enable-fast-unload --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi  --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist
+
+# 5th version
+# forces videos to play on 360p, loads websites on android platform
+# was using chromium 87.0.4280.101
+# updating it to 112.0.5615.138
+# Removing --disable-web-security cause some websites are acting weird
+#chromium --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=2 --enable-fast-unload --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --use-gl=desktop --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=360,webm --user-data-dir=/tmp/foo --user-agent="Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36"
+# disabling frame rate limit
+#chromium --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=2 --enable-fast-unload --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --use-gl=desktop --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=360,webm --user-data-dir=/tmp/foo --user-agent="Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-frame-rate-limit
+# downgrading from android 10.0 to android 9.0
+# and saving history for next session
+#chromium --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=2 --enable-fast-unload --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --use-gl=desktop --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/tmp/foo --user-agent="Mozilla/5.0 (Linux; Android 9; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-frame-rate-limit --keep-alive-for-test
+###### Checkpoint 1 ######
+# can access main chromiums themes,settings
+# default window-size (so far the best)   
+# Pro Tip: use on (arandr left) i.e portrait mode, for optimal standalone performance
+chromium --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --enable-accelerated-2d-canvas --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=4 --enable-fast-unload --disable-extensions --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/home/user/chromium_profile --window-size=550, 900
+###### Checkpoint 1 ######

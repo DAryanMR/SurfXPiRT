@@ -40,16 +40,6 @@ class WiFiScanner:
         subprocess.run(["sudo", "ip", "link", "set", "mlan0", "down"])
 
     def scan(self):
-        # Get PID of wpa_sup
-        #wpa_kill_msg = subprocess.run(['pidof', 'wpa_supplicant'], capture_output=True, text=True)
-
-        # Kill that wpa_sup
-        #if wpa_kill_msg.returncode == 0:
-            #pid = wpa_kill_msg.stdout.strip()
-            #subprocess.run(['kill', '-9', pid])
-        #subprocess.run(['sudo', 'sh', '/etc/wpa_killer.sh'])
-
-        # Rest of the stuff..
         subprocess.run(["sudo", "rfkill", "unblock", "all"])
         time.sleep(1)
         subprocess.run(["sudo", "ip", "link", "set", "mlan0", "up"])
@@ -95,12 +85,8 @@ network={{
                 f.write(wpa_supplicant)
             try:
                 subprocess.run(["sudo", "rm", "-rf", "/var/run/wpa_supplicant/"])
-                #subprocess.check_output(["sudo", "ip", "link", "set", "mlan0", "down"])
-                #time.sleep(1)
-                #subprocess.check_output(["sudo", "ip", "link", "set", "mlan0", "up"])
                 subprocess.run(["sudo", "wpa_supplicant", "nl80211", "-B", "-i", "mlan0", "-c", "/etc/wpa_supplicant/wpa_supplicant.conf"])                
                 # Obtain IP address
-                #subprocess.check_output(["sudo", "dhclient", "mlan0"])
                 subprocess.run(["sudo", "dhclient", "mlan0"])
                 # Store current IP address
                 ip_before = subprocess.check_output(['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
@@ -145,16 +131,13 @@ network={{
                         ssid = line.split("SSID: ")[1]
                     elif "WPA:" not in line and "RSN:" not in line:
                         self.open_ssids.append(ssid)
-                #if self.selected_ssid.get() in self.open_ssids:
-                    #self.password_label.config(text="(optional)")
-                #else:
                 self.password_label.config(text=f"(psk for: {my_selection})") 
 
     # ADD THIS FUNCTION TO THE CLASS TO HANDLE AUTO-CONNECT FUNCTIONALITY
     def auto_connect(self):
         result = messagebox.askyesno("Confirmation", "Are you sure you want to auto-connect?")
         if result:
-            # # Run the custom rc-local
+            # Run the custom rc-local
             subprocess.run(["sudo", "sh", "/etc/rc-local.sh"])
             messagebox.showinfo("Auto-Connect Successful", "Device will now attempt to connect to default network.")        
 

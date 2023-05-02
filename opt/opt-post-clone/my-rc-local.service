@@ -1,0 +1,9 @@
+[Unit]
+Description=My rc.local
+
+[Service]
+ExecStart=/usr/local/bin/rc-local.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
