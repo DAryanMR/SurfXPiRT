@@ -21,35 +21,53 @@ dd if=/dev/mmcblk1 of=/dev/mmcblk0 status=progress
 echo "Updating cmdline.txt..."
 # Make directory to mount the partitions
 mkdir /mnt/d
+echo "Created dir /mnt/d/"
 
 # Mount boot partition
+echo "Mounting boot partition ont /mnt/d/.."
 mount /dev/mmcblk0p1 /mnt/d
 
 # Remove previous cmdline
+echo "Removing previous cmdline.txt"
 rm /mnt/d/cmdline.txt
 
 # Copy updated cmdline
+echo "Copying updated cmdline.txt to boot partition"
 cp /boot/firmware/opt/cmdline.txt /mnt/d
 
 # Copy bootloader
+echo "Copying sRT bootloader to boot partition"
 cp -r /boot/firmware/opt/bootloader/* /mnt/d
 
 # Unmount boot partition
+echo "Unmounting boot partition"
 umount /dev/mmcblk0p1
 
 echo "Updating fstab..."
 # Mount filesystem
+echo "Mounting filesystem on /mnt/d/" 
 mount /dev/mmcblk0p2 /mnt/d
 
 # Remove previous fstab
+echo "Removing previous fstab from fs"
 rm /mnt/d/etc/fstab
 
 # Copy updated fstab
+echo "Copying updated fstab to fs"
 cp /boot/firmware/opt/fstab /mnt/d/etc
 
+# Copy updated rpi-set-sysconf
+echo "Removing previous rpi-set-sysconf"
+rm -rf /mnt/d/usr/local/sbin/rpi-set-sysconf
+echo "Copying updated rpi-set-sysconf file..."
+cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/
+chmod +x /mnt/d/usr/local/rpi-set-sysconf
+
 # Unmount fs
+echo "Unmounting fs..."
 umount /dev/mmcblk0p2
 
+echo ""
 echo "Clone successful."
 echo "Turn off device, remove SD card, and power it on normally. ;) "
 
