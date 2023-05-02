@@ -55,9 +55,9 @@ rm -rf /etc/network/interfaces
 cp /boot/firmware/opt/interfaces /etc/network/
 chmod +x /etc/network/interfaces
 
-# Copying touchscreen conf to /etc/X11/xorg.conf.d/ & making it executable
-cp /boot/firmware/opt/01-touchscreen.conf /etc/X11/xorg.conf.d/
-chmod +x /etc/X11/xorg.conf.d/01-touchscreen.conf
+## Copying touchscreen conf to /etc/X11/xorg.conf.d/ & making it executable
+#cp /boot/firmware/opt/01-touchscreen.conf /etc/X11/xorg.conf.d/
+#chmod +x /etc/X11/xorg.conf.d/01-touchscreen.conf
 
 # Copying rt-wifi-cli.desktop to /usr/share/applications
 cp /boot/firmware/opt/rt-wifi-cli.desktop /usr/share/applications
@@ -161,7 +161,7 @@ update-rc.d on-start.sh defaults
 
 
 #### Final choice of auto-connect for now
-# Copy custom rc-local.sh to /etc/ 
+# Copy custom rc-local.sh to /etc/ s
 cp /boot/firmware/opt/rc-local.sh /etc/
 chmod +x /etc/rc-local.sh
 
