@@ -19,7 +19,7 @@ echo ""
 echo "Started query for packages...."
 echo ""
 echo ""
-apt-get -y install xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman* software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager  libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms;
+apt-get -y install arandr *pulseaudio* xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman* software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager  libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms;
 echo ""
 echo ""
 echo "Packages installed!"
@@ -49,8 +49,10 @@ echo ""
 
 # Copying daisy.mp4 to test if vlc works
 mkdir -p /home/pi/Videos && cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos
+echo "Copying daisy.mp4 for video playback test"
 
 # Remove previous interfaces file and update it
+echo "Modifying interfaces"
 rm -rf /etc/network/interfaces
 cp /boot/firmware/opt/interfaces /etc/network/
 chmod +x /etc/network/interfaces
@@ -60,18 +62,21 @@ chmod +x /etc/network/interfaces
 #chmod +x /etc/X11/xorg.conf.d/01-touchscreen.conf
 
 # Copying rt-wifi-cli.desktop to /usr/share/applications
+echo "Copying PiRT Wifi Client desktop files"
 cp /boot/firmware/opt/rt-wifi-cli.desktop /usr/share/applications
 
 # Making it executable
 chmod +x /usr/share/applications/rt-wifi-cli.desktop
 
 # Copying chromium-lightweight.desktop to /usr/share/applications
+echo "Copying Chromium Lightweight desktop files"
 cp /boot/firmware/opt/chromium-lightweight.desktop /usr/share/applications
 
 # Making it executable
 chmod +x /usr/share/applications/chromium-lightweight.desktop
 
 # Copying chromium-lightweight script to /usr/local/bin/
+echo "Copying Chromium Lightweight script"
 cp /boot/firmware/opt/chromium-lightweight /usr/local/bin/
 
 # exec rights
@@ -79,11 +84,13 @@ cp /boot/firmware/opt/chromium-lightweight /usr/local/bin/
 chmod +x /usr/local/bin/chromium-lightweight
 
 # Copying Xcompmgr desktop entry to /etc/xdg/autostart/
+echo "Copying Xcompmgr desktop files"
 cp /boot/firmware/opt/Xcompmgr.desktop /etc/xdg/autostart/
 
 # Making it executable
 chmod +x /etc/xdg/autostart/Xcompmgr.desktop 
 
+echo "Copying standalone apps to Desktop"
 # Making a desktop dir to store 
 # miscellaneous standalone apps like these
 mkdir -p /home/pi/Desktop/standalone-apps
@@ -95,6 +102,12 @@ cp /usr/share/applications/chromium-lightweight.desktop /home/pi/Desktop/standal
 # Making all desktop apps executable
 chmod +x /home/pi/Desktop/standalone-apps/*.desktop
 
+echo "Copying ARandr display orientations"
+cp /boot/firmware/opt/standalone-landscape.sh /home/pi/.screenlayout/
+cp /boot/firmware/opt/standalone-portrait.sh /home/pi/.screenlayout/
+chmod +x /home/pi/.screenlayout/*.sh
+
+echo "Getting rights to execute PiRT-Wifi-Client without password"
 # Removing previous sudoers
 rm -rf /etc/sudoers
 
@@ -111,6 +124,7 @@ cp /boot/firmware/opt/sudoers /etc/sudoers
 #cp /boot/firmware/opt/my-rc-local.service /etc/systemd/system/
 
 # Copy wpa_supplicant.service to /etc/systemd/system/
+echo "Copying wpa_supplicant service"
 cp /boot/firmware/opt/wpa_supplicant.service /etc/systemd/system/
 
 # Copy rc-local.sh to /usr/local/bin/  and make it executable
@@ -146,10 +160,12 @@ cp /boot/firmware/opt/wpa_supplicant.service /etc/systemd/system/
 #systemctl enable rc-local.service
 
 # Disable /etc/rc.local
+echo "Disabling rc-local.service..."
 systemctl disable rc-local.service
 ###############################################################################################################################################################################################################################################################################################################
 # adding custom startup script to init.d 
 # Copy startup script to /etc/init.d
+echo "Setting up custom startup script"
 cp /boot/firmware/opt/custom-scripts/on-start.sh /etc/init.d/
 
 # Make on-start.sh executable
@@ -161,7 +177,8 @@ update-rc.d on-start.sh defaults
 
 
 #### Final choice of auto-connect for now
-# Copy custom rc-local.sh to /etc/ s
+# Copy custom rc-local.sh to /etc/
+echo "Setting up custom rc-local script" 
 cp /boot/firmware/opt/rc-local.sh /etc/
 chmod +x /etc/rc-local.sh
 
@@ -177,6 +194,7 @@ systemctl daemon-reload;
 #systemctl enable my-rc-local.service
 
 # Enable custom rc-local 
+echo "Enabling wpa_supplicant service"
 systemctl enable wpa_supplicant.service
 
 echo ""
