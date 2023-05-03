@@ -61,6 +61,12 @@ echo "Copying updated rpi-set-sysconf file..."
 cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/sbin
 chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 #####################
+#####################
+# Copy updated sudoers to fs
+rm -rf /mnt/d/etc/sudoers
+cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
+chmod +x /mnt/d/etc/suders
+#####################
 # Unmount fs
 echo "Unmounting fs..."
 umount /dev/mmcblk0p2
