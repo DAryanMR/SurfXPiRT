@@ -60,8 +60,8 @@ cp /boot/firmware/opt/fstab /mnt/d/etc
 echo "Removing previous rpi-set-sysconf"
 rm -rf /mnt/d/usr/local/sbin/rpi-set-sysconf
 echo "Copying updated rpi-set-sysconf file..."
-cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/
-chmod +x /mnt/d/usr/local/rpi-set-sysconf
+cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/sbin
+chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 #####################
 # Unmount fs
 echo "Unmounting fs..."
