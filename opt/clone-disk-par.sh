@@ -32,7 +32,6 @@ cp /boot/firmware/opt/cmdline.txt /mnt/d
 # Removing & replacing curr_opt with post_opt
 echo "Moving opt-post-clone from current opt"
 mv /mnt/d/opt/opt-post-clone /mnt/d/
-mv /mnt/d/opt/opt-post-clone /mnt/d
 echo "Removing current opt..."
 rm -rf /mnt/d/opt/
 echo "Getting updated opt.."
