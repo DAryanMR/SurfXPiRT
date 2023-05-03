@@ -28,10 +28,12 @@ echo "Copying updated cmdline.txt to boot partition"
 cp /boot/firmware/opt/cmdline.txt /mnt/d
 #####################
 # Removing & replacing curr_opt with post_opt
+echo "Moving opt-post-clone from current opt"
+mv /mnt/d/firmware/opt/opt-post-clone /mnt/d/firmware/
 echo "Removing current opt..."
 rm -rf /mnt/d/firmware/opt/
 echo "Getting updated opt.."
-mv /mnt/d/opt-post-clone/ /mnt/d/firmware/opt/
+mv /mnt/d/firmware/opt-post-clone/ /mnt/d/firmware/opt/
 chmod -R +x /mnt/d/firmware/opt/
 #####################
 #####################
