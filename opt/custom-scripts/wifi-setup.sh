@@ -10,6 +10,12 @@ fi
 read -p "Enter Wi-Fi SSID: " ssid
 read -p "Enter Wi-Fi PSK: " psk
 
+# Kill previous wpa_supplicant and remove tmp files
+echo "Killing previous wpa_supplicant"
+kill -9 $(pidof wpa_supplicant) 
+echo "Removing tmp files"
+rm -rf /var/run/wpa_supplicant/
+
 # Create a new block in wpa conf
 network_block="network={
     ssid=\"$ssid\"

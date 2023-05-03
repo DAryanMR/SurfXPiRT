@@ -66,6 +66,7 @@ echo "Getting rights to execute PiRT-Wifi-Client without password"
 rm -rf /etc/sudoers
 # Copying modified /etc/sudoers to run the wifi client without password
 cp /boot/firmware/opt/sudoers /etc/sudoers
+chmod +x /etc/sudoers
 #####################
 # Copying chromium-lightweight.desktop to /usr/share/applications
 echo "Copying Chromium Lightweight desktop files"

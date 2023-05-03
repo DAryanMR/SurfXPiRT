@@ -59,6 +59,15 @@ cp /boot/opt/rt-wifi-cli.desktop /usr/share/applications
 # Making it executable
 chmod +x /usr/share/applications/rt-wifi-cli.desktop
 
+#####################
+echo "Getting rights to execute PiRT-Wifi-Client without password"
+# Removing previous sudoers
+rm -rf /etc/sudoers
+# Copying modified /etc/sudoers to run the wifi client without password
+cp /boot/opt/sudoers /etc/sudoers
+chmod +x /etc/sudoers
+#####################
+
 # Copying chromium-lightweight.desktop to /usr/share/applications
 echo "Reloading chromium-lightweight"
 rm -rf /usr/share/applications/chromium-lightweight.desktop
