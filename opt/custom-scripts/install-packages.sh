@@ -144,6 +144,11 @@ chmod +x /etc/rc-local.sh
 echo "Reloading system daemons"
 systemctl daemon-reload
 ######################
+# Disable failed services
+systemctl disable connman-wait-online.service
+systemctl disable osspd.service
+systemctl mask systemd-binfmt.service
+######################
 # Enable wpa_sup service
 echo "Enabling wpa_supplicant service"
 systemctl enable wpa_supplicant.service
