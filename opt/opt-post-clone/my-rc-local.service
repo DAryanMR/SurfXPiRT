@@ -2,8 +2,7 @@
 Description=My rc.local
 
 [Service]
-ExecStart=/usr/local/bin/rc-local.sh
-Restart=always
+ExecStart=/usr/local/bin/on-start.sh
 
 [Install]
 WantedBy=multi-user.target

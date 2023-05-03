@@ -3,7 +3,6 @@ Description=My rc.local
 
 [Service]
 ExecStart=/usr/local/bin/on-start.sh
-Restart=always
 
 [Install]
 WantedBy=multi-user.target

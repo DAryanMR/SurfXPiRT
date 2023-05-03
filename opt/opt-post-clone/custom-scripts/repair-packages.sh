@@ -37,7 +37,6 @@ echo ""
 echo "Removing default lightdm configs.."
 rm -rf /etc/lightdm/lightdm.conf;
 rm -rf /etc/lightdm/lightdm-gtk-greeter.conf;
-
 # Copying adjusted config files
 echo "Copying modified lightdm configs.."
 cp /boot/opt/lightdm.conf /etc/lightdm;
@@ -57,7 +56,6 @@ chmod +x /etc/network/interfaces
 echo "Reloading rt-wifi-client"
 rm -rf /usr/share/applications/rt-wifi-cli.desktop
 cp /boot/opt/rt-wifi-cli.desktop /usr/share/applications
-
 # Making it executable
 chmod +x /usr/share/applications/rt-wifi-cli.desktop
 
@@ -65,14 +63,12 @@ chmod +x /usr/share/applications/rt-wifi-cli.desktop
 echo "Reloading chromium-lightweight"
 rm -rf /usr/share/applications/chromium-lightweight.desktop
 cp /boot/opt/chromium-lightweight.desktop /usr/share/applications
-
 # Making it executable
 chmod +x /usr/share/applications/chromium-lightweight.desktop
 
 # Copying chromium-lightweight script to /usr/local/bin/
 rm -rf /usr/local/bin/chromium-lightweight
 cp /boot/opt/chromium-lightweight /usr/local/bin/
-
 # exec rights
 # Now you can run  ->  chromium-lightweight  <- from anywhere in the terminal to launch this script
 chmod +x /usr/local/bin/chromium-lightweight
@@ -81,7 +77,6 @@ chmod +x /usr/local/bin/chromium-lightweight
 echo "Reloading Xcompmgr configs"
 rm -rf /etc/xdg/autostart/Xcompmgr.desktop
 cp /boot/opt/Xcompmgr.desktop /etc/xdg/autostart/
-
 # Making it executable
 chmod +x /etc/xdg/autostart/Xcompmgr.desktop 
 
@@ -94,14 +89,12 @@ mkdir -p /home/pi/Desktop/standalone-apps
 # Copying desktop apps
 cp /usr/share/applications/rt-wifi-cli.desktop /home/pi/Desktop/standalone-apps/
 cp /usr/share/applications/chromium-lightweight.desktop /home/pi/Desktop/standalone-apps/
-
 # Making all desktop apps executable
 chmod +x /home/pi/Desktop/standalone-apps/*.desktop
 
 # Copy wpa_supplicant.service to /etc/systemd/system/
 rm -rf /etc/systemd/system/wpa_supplicant.service
 cp /boot/opt/wpa_supplicant.service /etc/systemd/system/
-
 ###############################################################################################################################################################################################################################################################################################################
 ### Alternative to /etc/rc.local because it doesn't work by default 
 # Disable /etc/rc.local
@@ -118,13 +111,17 @@ chmod +x /etc/rc-local.sh
 echo "Reloading system daemons"
 systemctl daemon-reload;
 
+# Enable wpa_sup service
 echo "Enabling wpa_supplicant service....."
-# Enable custom rc-local 
 systemctl enable wpa_supplicant.service
+
+# Enable custom rc-local
+echo "Enabling autoloading services"
+systemctl enable my-rc-local.service
 
 echo ""
 echo ""
-echo "Packages installed and configured successfully.."
+echo "Packages repaired and configured successfully.."
 echo "Reboot now.."
 
 exit 0
