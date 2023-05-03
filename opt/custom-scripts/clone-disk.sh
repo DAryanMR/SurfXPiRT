@@ -1,6 +1,7 @@
 #! /bin/sh
 
-# Execute the parent script and detonate
+#### Suicidal script
+# Executes parent script and detonates
 sh /etc/clone-disk-par.sh
 
 exit 0

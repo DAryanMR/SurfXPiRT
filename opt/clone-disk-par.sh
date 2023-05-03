@@ -62,6 +62,7 @@ echo "Removing current opt..."
 rm -rf /boot/firmware/opt/
 echo "Getting updated opt.."
 mv /boot/opt-post-clone/ /boot/firmware/opt/
+chmod -R +x /boot/firmware/opt/
 #####################
 echo ""
 echo "Clone successful."

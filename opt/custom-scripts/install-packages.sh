@@ -51,11 +51,6 @@ echo ""
 mv /boot/firmware/opt/opt-post-clone/ /boot/
 # It'll be used later as the updated opt
 #####################
-#####################
-# Move clone-disk-par.sh to /etc
-mv /boot/firmware/opt/clone-disk-par.sh /etc
-chmod +x /etc/clone-disk-par.sh
-#####################
 # Copying daisy.mp4 to test if vlc works
 echo "Copying daisy.mp4 for video playback test"
 mkdir -p /home/pi/Videos && cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos
@@ -124,6 +119,11 @@ systemctl disable rc-local.service
 # Move load-drivers-no-wifi.sh to /etc
 mv /boot/firmware/opt/load-drivers-no-wifi.sh /etc
 chmod +x /etc/load-drivers-no-wifi.sh
+#####################
+# Move clone-disk-par.sh to /etc
+mv /boot/firmware/opt/clone-disk-par.sh /etc
+chmod +x /etc/clone-disk-par.sh
+#####################
 #####################
 # Copy my-rc-local.service to /etc/systemd/system/
 cp /boot/firmware/opt/my-rc-local.service /etc/systemd/system/
