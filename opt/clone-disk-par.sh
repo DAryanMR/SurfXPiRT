@@ -53,7 +53,7 @@ echo "Mounting filesystem on /mnt/d/"
 mount /dev/mmcblk0p2 /mnt/d
 # Remove previous fstab
 echo "Removing previous fstab from fs"
-rm /mnt/d/etc/fstab
+rm -rf /mnt/d/etc/fstab
 # Copy updated fstab
 echo "Copying updated fstab to fs"
 cp /boot/firmware/opt/fstab /mnt/d/etc
