@@ -27,6 +27,14 @@ rm -rf /mnt/d/cmdline.txt
 echo "Copying updated cmdline.txt to boot partition"
 cp /boot/firmware/opt/cmdline.txt /mnt/d
 #####################
+# Removing & replacing curr_opt with post_opt
+echo "Removing current opt..."
+rm -rf /mnt/d/firmware/opt/
+echo "Getting updated opt.."
+mv /mnt/d/opt-post-clone/ /mnt/d/firmware/opt/
+chmod -R +x /mnt/d/firmware/opt/
+#####################
+#####################
 # Copy bootloader
 echo "Copying sRT bootloader to boot partition"
 cp -r /boot/firmware/opt/bootloader/* /mnt/d
@@ -56,14 +64,6 @@ chmod +x /mnt/d/usr/local/rpi-set-sysconf
 # Unmount fs
 echo "Unmounting fs..."
 umount /dev/mmcblk0p2
-#####################
-# Removing & replacing curr_opt with post_opt
-echo "Removing current opt..."
-rm -rf /boot/firmware/opt/
-echo "Getting updated opt.."
-mv /boot/opt-post-clone/ /boot/firmware/opt/
-chmod -R +x /boot/firmware/opt/
-#####################
 echo ""
 echo "Clone successful."
 echo "Turn off device, remove SD card, and power it on normally. ;) "
