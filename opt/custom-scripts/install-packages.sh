@@ -102,6 +102,7 @@ chmod +x /home/pi/Desktop/standalone-apps/*.desktop
 ######################
 ####################################################################################
 echo "Copying ARandr display orientations"
+mkdir -p /home/pi/.screenlayout
 cp /boot/firmware/opt/standalone-landscape.sh /home/pi/.screenlayout/
 cp /boot/firmware/opt/standalone-portrait.sh /home/pi/.screenlayout/
 chmod +x /home/pi/.screenlayout/*.sh
