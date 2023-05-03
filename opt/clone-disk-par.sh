@@ -14,6 +14,8 @@ echo "Cloning SD card to eMMC..."
 dd if=/dev/mmcblk1 of=/dev/mmcblk0 status=progress
 #####################
 echo "Updating cmdline.txt..."
+# Removing previous /mnt/d if any
+rm -rf /mnt/d
 # Make directory to mount the partitions
 mkdir /mnt/d
 echo "Created dir /mnt/d/"
