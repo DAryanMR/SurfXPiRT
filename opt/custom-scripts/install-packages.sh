@@ -150,6 +150,9 @@ systemctl disable connman-wait-online.service
 systemctl disable osspd.service
 systemctl mask systemd-binfmt.service
 ######################
+# Enable systemd-networkd service
+systemctl enable systemd-networkd.service
+######################
 # Enable wpa_sup service
 echo "Enabling wpa_supplicant service"
 systemctl enable wpa_supplicant.service
