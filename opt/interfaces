@@ -11,6 +11,4 @@ iface mlan0 inet dhcp
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
     autoconnect-retries 5
     autoconnect-delay 10
-    # Enabling hotplug capabilities 
-    # (Kind of extends the interface's lifespan & reduces chances of network failure)
-    allow-hotplug mlan0
+allow-hotplug mlan0
