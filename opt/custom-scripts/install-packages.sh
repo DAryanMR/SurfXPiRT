@@ -135,6 +135,12 @@ echo "Setting up auto-connect script"
 cp /boot/firmware/opt/rc-local.sh /etc/
 chmod +x /etc/rc-local.sh
 ######################
+# Copy update-surfxpirt to /usr/local/bin
+echo "Copying surfxpirt-update-manager..."
+cp /boot/firmware/opt/update-surfxpirt /usr/local/bin
+chmod +x /usr/local/bin/update-surfxpirt
+echo "Now you can run 'sudo update-surfxpirt' after cloning to eMMC to get latest updates for your Surface RT"
+######################
 # Reload system daemons
 echo "Reloading system daemons"
 systemctl daemon-reload
