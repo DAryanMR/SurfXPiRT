@@ -1,4 +1,4 @@
-# SurfXPiRT (Stable Debian 12 for the Surface RT )
+# SurfXPiRT (Stable Debian 12 with LXDE for the Surface RT )
 
 I attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
