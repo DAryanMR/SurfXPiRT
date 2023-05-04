@@ -24,6 +24,11 @@ A lot of tweaks are still left undone, I'll find some of which are  to be tweake
 - Open and configure Onboard (On screen keyboard)
 - Enable virtual keyboard for xscreensaver lock   (Still not implemented) Screen can be brought back from locked state without physical keyboard but if you suspend the system then you'll need a keyboard to unlock it again. :(
 
+Run lsmod and make sure output looks like this otherwise modules didn't load properly: 
+![lsmod-1](https://user-images.githubusercontent.com/132191670/236254854-3aaf69a1-4932-4f20-81d5-a6caaea52e48.png)
+![lsmod-2](https://user-images.githubusercontent.com/132191670/236254880-ad106af5-62c0-4caf-8a9c-cbedfe4595f2.png)
+![lsmod-3](https://user-images.githubusercontent.com/132191670/236254945-736edd07-89aa-49b9-915c-6d9577b54b74.png)
+
 Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
 
