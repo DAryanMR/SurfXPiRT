@@ -37,15 +37,15 @@
 #chromium --use-gl=vulkan --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=2 --enable-fast-unload --disable-extensions --disable-plugins-discovery --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-infobars --disable-overlay-scrollbar --enable-vaapi --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/tmp/foo --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-frame-rate-limit --keep-alive-for-test --disk-cache-size=10000000 --user-data-dir=~/.config/chromium
 
 ###### Checkpoint 1 ######
+# (so far the best) 
 # can access main chromiums themes,settings
-# default window-size (so far the best)   
+# default window-size  
 # Pro Tip: use on (arandr left) i.e portrait mode, for optimal standalone performance
-chromium --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --enable-accelerated-2d-canvas --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=4 --enable-fast-unload --disable-extensions --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/home/user/chromium_profile --window-size=550, 900
-# After opening it for the first time,
-# go to: chrome://flags   
-# then, enable: 
-#       GPU rasterization
-#       Zero-copy rasterizer
-#       Vulkan
-#       Enables Display Compositor to use a new gpu thread
+#chromium --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --enable-accelerated-2d-canvas --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=4 --enable-fast-unload --disable-extensions --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/home/user/chromium_profile --window-size=550, 900
+# disabled software-rasterizer, gpu-driver-bug-workarounds, 
+# increased force-effective-connection-type value
+# Removed disable-backgroud-networking, enable-fast-unload
+# increased force-video-resolution
+# added disable-accelerated-video-decode, disable-features=VariableContentCache (video remains constant through playback)
+chromium --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --enable-accelerated-2d-canvas --force-effective-connection-type=6 --disable-extensions --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=480,webm --user-data-dir=/home/user/chromium_profile --window-size=550,900 --disable-gpu-driver-bug-workarounds --disable-accelerated-video-decode --disable-features=VariableContentCache
 ###### Checkpoint 1 ######
