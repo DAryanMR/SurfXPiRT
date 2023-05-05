@@ -67,7 +67,7 @@ chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 # Copy updated sudoers to fs
 rm -rf /mnt/d/etc/sudoers
 cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
-chmod +x /mnt/d/etc/suders
+chmod +x /mnt/d/etc/sudoers
 #####################
 # Unmount fs
 echo "Unmounting fs..."
