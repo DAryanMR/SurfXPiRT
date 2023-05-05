@@ -137,9 +137,31 @@ network={{
     def auto_connect(self):
         result = messagebox.askyesno("Confirmation", "Are you sure you want to auto-connect?")
         if result:
-            # Run the custom rc-local
-            subprocess.run(["sudo", "sh", "/etc/rc-local.sh"])
-            messagebox.showinfo("Auto-Connect Successful", "Device will now attempt to connect to default network.")        
+            try:
+                # Run the custom rc-local
+                subprocess.run(["sudo", "rc-local"])
+                # Obtain IP address
+                #subprocess.run(["sudo", "dhclient", "mlan0"])
+                # Store current IP address
+                ip_before = subprocess.check_output(['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
+                output = subprocess.check_output(["sudo", "iw", "dev", "mlan0", "link"])
+                # Check if IP address has changed
+                ip_after = subprocess.check_output(['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
+                if ip_before != ip_after:
+                    messagebox.showinfo("Auto Connect Successful",
+                                        f"Connected to local network")
+                else:
+                    # Check if the network is reachable
+                    #ping_output = subprocess.check_output(["ping", "-c", "1", ssid]).decode()
+                    ping_output = subprocess.check_output(["ping", "8.8.8.8"]).decode()
+                    if "100% packet loss" in ping_output:
+                        messagebox.showerror(
+                            "Connection Failed", "Unable to connect to the selected network")
+            except subprocess.CalledProcessError:
+                messagebox.showerror(
+                    "Connection Failed", "Unable to connect to the selected network")
+        self.master.destroy()
+
 
 
 root = tk.Tk()
