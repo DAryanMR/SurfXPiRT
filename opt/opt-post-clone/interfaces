@@ -1,0 +1,22 @@
+# interfaces(5) file used by networking(8) daemon
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The wireless network interface
+#allow-hotplug mlan0
+auto mlan0
+iface mlan0 inet dhcp
+#wpa-proto RSN
+#wpa-pairwise CCMP
+#wpa-group CCMP
+#wpa-key-mgmt WPA-PSK
+wpa-driver nl80211,mwifiex
+pre-up wpa_supplicant -B -Dnl80211,mwifiex -P/var/run/wpa_supplicant.mlan0.pid -imlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
+post-down kill -TERM 'cat /vat/run/wpa_supplicant.mlan0.pid'
+wireless-power off
+#    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+autoconnect-retries 5
+autoconnect-delay 10
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.con

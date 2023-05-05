@@ -123,7 +123,7 @@ systemctl disable rc-local.service
 
 #### Final choice of startup-script for now
 # Copy custom rc-local.sh to /etc/ 
-rm -rm /etc/rc-local.sh
+rm -rf /etc/rc-local.sh
 cp /boot/opt/rc-local.sh /etc/
 chmod +x /etc/rc-local.sh
 #####################################################################################################################################################################
