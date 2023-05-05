@@ -31,7 +31,7 @@ cp /boot/firmware/opt/cmdline.txt /mnt/d
 #####################
 # Removing & replacing curr_opt with post_opt
 echo "Moving opt-post-clone to new boot partition"
-mv /boot/firmware/opt/opt-post-clone /mnt/d
+mv /media/pi/RASPIROOT/boot/opt-post-clone /mnt/d
 rm -rf /mnt/d/opt
 mv /mnt/d/opt-post-clone /mnt/d/opt
 chmod -R +x /mnt/d/opt/
