@@ -6,8 +6,8 @@
 
 ## Startup modules
 # Wireless Interface
-mwifiex
-cfg80211
+#mwifiex
+#cfg80211
 # Core GPU driver
 drm
 # Vulkan drivers
