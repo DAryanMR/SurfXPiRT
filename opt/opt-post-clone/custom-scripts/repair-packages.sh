@@ -110,6 +110,7 @@ mkdir -p /home/pi/Desktop/standalone-apps
 # Copying desktop apps
 cp /usr/share/applications/rt-wifi-cli.desktop /home/pi/Desktop/standalone-apps/
 cp /usr/share/applications/chromium-lightweight.desktop /home/pi/Desktop/standalone-apps/
+cp /usr/share/applications/pingman.desktop /home/pi/Desktop/standalone-apps/
 # Making all desktop apps executable
 chmod +x /home/pi/Desktop/standalone-apps/*.desktop
 
