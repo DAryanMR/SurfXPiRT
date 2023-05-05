@@ -5,10 +5,10 @@ auto lo
 iface lo inet loopback
 
 # The wireless network interface
-auto mlan0
+# auto mlan0
+allow-hotplug mlan0
 iface mlan0 inet dhcp
     wireless-power off
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
     autoconnect-retries 5
     autoconnect-delay 10
-allow-hotplug mlan0
