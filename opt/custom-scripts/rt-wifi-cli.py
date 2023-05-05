@@ -79,6 +79,9 @@ network={{
     key_mgmt=WPA-PSK
     psk="{password}"
     priority=1
+    proto=RSN
+    pairwise=CCMP
+    group=CCMP
 }}
 '''
             with open("/etc/wpa_supplicant/wpa_supplicant.conf", "w") as f:

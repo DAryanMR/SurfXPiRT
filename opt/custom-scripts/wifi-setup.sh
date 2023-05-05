@@ -23,6 +23,9 @@ network_block="network={
     key_mgmt=WPA-PSK
     psk=\"$psk\"
     priority=1
+    proto=RSN
+    pairwise=CCMP
+    group=CCMP
 }";
 
 # Add network block to the end of wpa conf

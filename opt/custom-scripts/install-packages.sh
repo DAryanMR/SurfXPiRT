@@ -76,6 +76,14 @@ cp /boot/firmware/opt/chromium-lightweight /usr/local/bin/
 # Now you can run  ->  chromium-lightweight  <- from anywhere in the terminal to launch this script
 chmod +x /usr/local/bin/chromium-lightweight
 #####################
+# Copy pingman to /usr/local/bin/
+cp /boot/firmware/opt/pingman /usr/local/bin
+chmod +x /usr/local/bin/pingman
+#####################
+# Copying pingman.desktop to /usr/share/applications
+echo "Copying Pingman desktop files"
+cp /boot/firmware/opt/pingman.desktop /usr/share/applications
+chmod +x /usr/share/applications/pingman.desktop
 ####################################################################################
 # Copying Xcompmgr desktop entry to /etc/xdg/autostart/
 echo "Copying Xcompmgr desktop files"
@@ -91,6 +99,7 @@ mkdir -p /home/pi/Desktop/standalone-apps
 # Copying desktop apps
 cp /usr/share/applications/rt-wifi-cli.desktop /home/pi/Desktop/standalone-apps/
 cp /usr/share/applications/chromium-lightweight.desktop /home/pi/Desktop/standalone-apps/
+cp /usr/share/applications/pingman.desktop /home/pi/Desktop/standalone-apps/
 ######################
 # Making all desktop apps executable
 chmod +x /home/pi/Desktop/standalone-apps/*.desktop
@@ -134,6 +143,13 @@ chmod +x /usr/local/bin/on-start.sh
 echo "Setting up auto-connect script"
 cp /boot/firmware/opt/rc-local.sh /etc/
 chmod +x /etc/rc-local.sh
+######################
+# Copy modules to /etc
+echo "Removing previous auto-loading modules"
+rm -rf /etc/modules
+echo "Copying auto-loading modules..."
+cp /boot/firmware/opt/custom-scripts/modules /etc
+chmod +x /etc/modules
 ######################
 # Copy update-surfxpirt to /usr/local/bin
 echo "Copying surfxpirt-update-manager..."

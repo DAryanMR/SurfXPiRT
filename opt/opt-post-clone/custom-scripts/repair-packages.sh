@@ -59,6 +59,13 @@ cp /boot/opt/rt-wifi-cli.desktop /usr/share/applications
 # Making it executable
 chmod +x /usr/share/applications/rt-wifi-cli.desktop
 
+# Copying pingman.desktop to /usr/share/applications
+echo "Reloading Pingman"
+rm -rf /usr/share/applications/pingman.desktop
+cp /boot/opt/pingman.desktop /usr/share/applications
+# Making it executable
+chmod +x /usr/share/applications/pingman.desktop
+
 #####################
 echo "Getting rights to execute PiRT-Wifi-Client without password"
 # Removing previous sudoers
@@ -74,6 +81,11 @@ rm -rf /usr/share/applications/chromium-lightweight.desktop
 cp /boot/opt/chromium-lightweight.desktop /usr/share/applications
 # Making it executable
 chmod +x /usr/share/applications/chromium-lightweight.desktop
+
+# Copying pingman.desktop  to /usr/local/bin
+rm -rf /usr/share/applications/pingman.desktop
+cp /boot/opt/pingman.desktop /usr/share/applications
+chmod +x /usr/share/applications/pingman.desktop
 
 # Copying chromium-lightweight script to /usr/local/bin/
 rm -rf /usr/local/bin/chromium-lightweight

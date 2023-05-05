@@ -1,5 +1,3 @@
-
-
 ### Installation Serial of scripts:
 1. load-drivers.sh
 2. wifi-setup.sh
