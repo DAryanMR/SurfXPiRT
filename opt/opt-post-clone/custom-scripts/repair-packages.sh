@@ -136,6 +136,13 @@ echo "Copying surfxpirt-update-manager..."
 cp /boot/opt/update_manager/* /usr/local/bin
 echo "Now you can run 'sudo update-surfxpirt' (if cloned to eMMC) to get latest updates for your Surface RT"
 
+# Generating initrd.img
+echo "Generating 5.17-rc3 initrd.img"
+cp /boot/zImage initrd.img-5.17.x.x-armmp
+mv /boot/initrd.img-6.0.0-6-armmp /boot/initrd.img-6.0.0-6-armmp.bak
+mv /boot/initrd.img-6.1.0-7-armmp /boot/initrd.img-6.1.0-7-armmp.bak
+update-initramfs -u -k all
+
 echo ""
 echo ""
 echo "Packages re-configured successfully.."
