@@ -1,5 +1,10 @@
 # SurfXPiRT (Stable Debian 12 + LXDE for the Surface RT )
 
+Update: After cloning and booting to eMMC;
+- Run 'sudo rc-local' to connect to your default network. 
+- Then run 'sudo update-surfxpirt' to get latest updates of custom scripts and configs.
+This way you won't have to manually configure the packages after cloning.
+
 I attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
 
@@ -15,8 +20,6 @@ I do not own any of the files except for the custom scripts (opt folder).
 You can check the introductory video below in the tutorial's description, I've talked about where I got inspired from and how I got rest of the files.
 
 You might notice some bugs here and there as the scripts were written on a rush, but I'm constantly working on their improvements. In the meanwhile, use it to discover what it can do. I even played Chocolate Doom for a while. 
-
-Update: Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get latest updates of custom scripts and configs.
 
 A lot of tweaks are still left undone, I'll find some of which are  to be tweaked and put them on a video or text-form.
 - Install and setup xcompmgr to start on boot (If you download the boot files now you won't have to install it, the scripts have been updated to do it automatically, just enable it to run on startup and set it up as default composition manager)
