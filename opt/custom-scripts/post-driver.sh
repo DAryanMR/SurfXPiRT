@@ -18,7 +18,6 @@ for module in \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/media/dvb-frontends/drx39xyj/drx39xyj.ko \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/media/spi/cxd2880-spi.ko \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/media/tuners/*.ko \
-    /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/net/wireless/marvell/mwifiex/*.ko \
     /lib/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f/kernel/drivers/platform/chrome/*.ko \
