@@ -139,10 +139,10 @@ cp /boot/firmware/opt/custom-scripts/on-start.sh /usr/local/bin/
 chmod +x /usr/local/bin/on-start.sh
 ######################
 #### Final choice of auto-connect for now ####
-# Copy custom rc-local.sh to /etc/
+# Copy custom rc-local.sh to /usr/local/bin
 echo "Setting up auto-connect script"
-cp /boot/firmware/opt/rc-local.sh /etc/
-chmod +x /etc/rc-local.sh
+cp /boot/firmware/opt/rc-local.sh /usr/local/bin/rc-local
+chmod +x /usr/local/bin/rc-local
 ######################
 # Copy modules to /etc
 echo "Removing previous auto-loading modules"

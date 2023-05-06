@@ -46,15 +46,15 @@ echo "Obtaining IP address.."
 dhclient mlan0;
 
 # Set default gateway (Requires Restart to work!)
-gateway=$(ip route | awk '/default via/');
+gateway=$(ip route | awk '/default via/{}');
 old_gateway=$(ip route | awk '/^default via/{print $3}');
 if [ ! -z "$old_gateway" ]; then
     ip route del default;
     echo "Old default gateway $old_gateway deleted.";
 fi
-ip route add $gateway;
+ip route add default via $gateway dev mlan0;
 echo "Default gate set to $gateway for mlan0 interface."
-ip route add default via $(ip route | awk '/default/ {print $3}') dev $(ip route | awk '/default/ {print $5}')
+# ip route add default via $(ip route | awk '/default/ {print $3}') dev $(ip route | awk '/default/ {print $5}')
 
 echo ""
 echo ""
