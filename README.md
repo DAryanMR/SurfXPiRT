@@ -1,4 +1,4 @@
-# SurfXPiRT (Stable Debian 12 with LXDE for the Surface RT )
+# SurfXPiRT (Stable Debian 12 + LXDE for the Surface RT )
 
 I attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
@@ -33,7 +33,8 @@ Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
 
 Notes: 
-1. If you navigate to menu -> Internet , you'll find chromium-lightweight, I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;)    [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
+1. Navigate to menu -> Internet , open chromium-lightweight, type in chrome://flags, enable vulkan.
+ I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;)    [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
 2. Use chromium-lightweight to stream videos on youtube, use the default quality set by youtube for best performance. Videos can be streamed at 360p max, however, 240p reduces stress substantially. Looking for workarounds..and working on improvements.  
 3. Open the rt-wifi-client and click on 'Auto-connect', choose yes & you should be connected to default network.
 4. Use the rt-wifi-client's 'Scan' & 'Connect' option only to connect to new wifi ssids when your default wifi is down or if you're away from it.
