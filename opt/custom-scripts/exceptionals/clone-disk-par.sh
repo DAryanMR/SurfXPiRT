@@ -65,7 +65,10 @@ chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 # Copy updated sudoers to fs
 rm -rf /mnt/d/etc/sudoers
 cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
-chmod +x /mnt/d/etc/sudoers
+#####################
+# Copy updated raspi-firmware to fs
+rm -rf /mnt/d/etc/default/raspi-firmware
+cp /boot/firmware/opt/raspi-firmware /mnt/d/etc/default/raspi-firmware
 #####################
 # Unmount fs
 echo "Unmounting /dev/mmcblk0p2 ..."
