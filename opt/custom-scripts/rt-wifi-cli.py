@@ -160,9 +160,9 @@ network={{
             except subprocess.CalledProcessError:
                 messagebox.showerror(
                     "Connection Failed", "Unable to connect to the selected network")
-        self.master.destroy()
-
-
+            
+            # Close the main window
+            self.master.destroy()
 
 root = tk.Tk()
 wifi_scanner = WiFiScanner(root)
