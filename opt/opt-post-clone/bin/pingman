@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# Pingman
+# checks status of network & sometimes extends it
+
+# takes gateway_ip
+gateway_ip=$(ip route | awk '/default via/{print $3}')
+# keeps pinging it
+ping $gateway_ip
+
+exit 0

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Pingman
-Comment=Network checker for Surface RT (Loonix)
-Exec=/usr/local/bin/pingman %U
-Icon=/boot/opt/images/pingman-logo.png
-Terminal=true
-Type=Application
-Categories=Utility;
-

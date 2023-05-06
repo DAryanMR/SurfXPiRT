@@ -1,0 +1,21 @@
+#! /bin/sh
+
+echo "Removing previous SurfXPiRT dir"
+rm -rf SurfXPiRT/
+echo "Reaching update manager base"
+git clone https://github.com/DAryanMR/SurfXPiRT
+echo "Removing current opt"
+rm -rf /boot/opt
+echo "Copying updated opt"
+mv SurfXPiRT/opt/opt-post-clone /boot/opt
+echo "Getting executable rights"
+chmod -R +x /boot/opt/
+echo "Updating SurfXPiRT......."
+echo ""
+echo ""
+sh /boot/opt/custom-scripts/repair-packages.sh 
+echo "Removing leftovers.."
+rm -rf SurfXPiRT/
+echo "Reboot now!"
+
+exit 0

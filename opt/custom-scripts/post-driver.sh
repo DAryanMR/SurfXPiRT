@@ -1,6 +1,7 @@
 #! /bin/sh -e
 
 # Copy mrvl firmwares and modules to /lib/firmware/
+rm -rf /lib/firmware/mrvl
 mkdir -p /lib/firmware/mrvl
 cp -r /boot/firmware/opt/firmware/mrvl/* /lib/firmware/mrvl
 cp -r /boot/firmware/opt/modules/5.17.0-rc3-next-20220207-g5bd2d473f01f /lib/modules

@@ -1,0 +1,23 @@
+# /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+# Parameters can be specified after the module name.
+
+## Startup modules
+# Wireless Interface
+#mwifiex
+#cfg80211
+# Core GPU driver
+drm
+# Vulkan drivers
+vulkan
+# Touchscreen
+i2c-dev
+#i2c-cros-ec-tunnel
+# Touchpad
+#psmouse
+# Bluetooth
+bluetooth
+btusb
+

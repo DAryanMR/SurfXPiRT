@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PiRT Wifi Client
+Comment=Mini wifi client for Surface RT (Loonix)
+Exec=sudo /boot/firmware/opt/custom-scripts/rt-wifi-cli.sh %U
+Icon=/boot/firmware/opt/images/wifi-cli-logo.png
+Terminal=false
+Type=Application
+Categories=Utility;
