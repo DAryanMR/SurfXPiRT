@@ -100,7 +100,7 @@ echo ""
 echo ""
 systemctl disable rc-local.service
 systemctl disable connman-wait-online.service
-systemctl disable osspd.service
+#systemctl disable osspd.service
 systemctl mask systemd-binfmt.service
 
 # Reload system daemons
@@ -128,6 +128,11 @@ cp -r /boot/firmware/opt/lightdm/* /etc/lightdm
 echo "Lightdm configured, autologin set to user 'pi' "
 echo ""
 echo ""
+
+# Copy adjusted raspi-firmware to fs
+echo "Updating GPU driver & GPU memory size"
+rm -rf /etc/default/raspi-firmware
+cp /boot/firmware/opt/raspi-firmware /etc/default/raspi-firmware
 
 # Copy update-surfxpirt to /usr/local/bin
 echo "Copying surfxpirt-update-manager..."
