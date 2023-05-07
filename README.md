@@ -36,10 +36,9 @@ Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
 
 Notes: 
-1. Navigate to menu -> Internet , open chromium-lightweight, type in chrome://flags, enable vulkan.
- I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;)    [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
-2. Use chromium-lightweight to stream videos on youtube, use the default quality set by youtube for best performance. Videos can be streamed at 360p max, however, 240p reduces stress substantially. Looking for workarounds..and working on improvements.  
-3. Open the rt-wifi-client and click on 'Auto-connect', choose yes & you should be connected to default network.
+1. Navigate to Menu -> Internet , open chromium-lightweight, type in chrome://flags, enable vulkan. I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;) [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
+2. It's best to run videos on youtube using windowed mode of chromium-lightweight with default playback quality, it performs pretty well and I'm planning on tweaking it to do even better. 
+3. On startup, open the rt-wifi-client and click on 'Auto-connect', choose yes & you should be connected to the internet.
 4. Use the rt-wifi-client's 'Scan' & 'Connect' option only to connect to new wifi ssids when your default wifi is down or if you're away from it.
 If you're already connected to a network then tapping on scan one time might not pop up other ssids, keep slamming the scan button until you see the ssids popping up, while selecting, slam your wifi ssid too if you dont see 'psk for: your_ssid' popping above the password prompt. Tap on connect after you see that on the password prompt.
 If the wifi client doesn't connect you to the internet reboot to check if you can normally connect.
