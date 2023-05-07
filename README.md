@@ -32,11 +32,15 @@ Run lsmod and make sure output looks like this otherwise modules didn't load pro
 ![lsmod-2](https://user-images.githubusercontent.com/132191670/236254880-ad106af5-62c0-4caf-8a9c-cbedfe4595f2.png)
 ![lsmod-3](https://user-images.githubusercontent.com/132191670/236254945-736edd07-89aa-49b9-915c-6d9577b54b74.png)
 
+Open chromium-lightweight, go to chrome://flags, enable these features:
+[Screenshot from 2023-05-07 19-45-50.png.pdf](https://github.com/DAryanMR/SurfXPiRT/files/11415156/Screenshot.from.2023-05-07.19-45-50.png.pdf)
+try using it in windowed mode because it provides stable fps.
+
 Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
 
 Notes: 
-1. Navigate to Menu -> Internet , open chromium-lightweight, type in chrome://flags, enable vulkan. I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;) [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
+1. Navigate to Menu -> Internet , open chromium-lightweight, I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;) [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
 2. It's best to run videos on youtube using windowed mode of chromium-lightweight with default playback quality, it performs pretty well and I'm planning on tweaking it to do even better. 
 3. On startup, open the rt-wifi-client and click on 'Auto-connect', choose yes & you should be connected to the internet.
 4. Use the rt-wifi-client's 'Scan' & 'Connect' option only to connect to new wifi ssids when your default wifi is down or if you're away from it.
