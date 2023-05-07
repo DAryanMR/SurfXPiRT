@@ -52,6 +52,28 @@
 
 ###### Level 2 ######
 # Stretching it's potentials
-#chromium --disable-frame-rate-limit --enable-accelerated-2d-canvas --enable-zero-copy-dxgi-video --enable-oop-rasterization --enable-webgl --enable-low-latency --enable-vaapi --disable-accelerated-video-decode --enable-fast-unload --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-extensions --disable-sync --disable-translate --disable-breakpad --autoplay-policy=user-gesture-required --ignore-gpu-blacklist --force-video-resolution=webm --user-data-dir=/home/user/chromium_profile --window-size=550,700 --disable-gpu --disable-gpu-driver-bug-workarounds --disable-features=VariableContentCache --disable-background-video-optimization --disable-renderer-backgrounding --disk-cache-size=1073741824 --enable-smooth-scrolling --disable-gl-extensions --enable-parallel-downloading --force-compositing-mode-2
-chromium  --disable-frame-rate-limit --enable-accelerated-2d-canvas --enable-zero-copy-dxgi-video --enable-oop-rasterization --enable-webgl --enable-low-latency --enable-vaapi --disable-accelerated-video-decode --enable-fast-unload --disable-gpu-driver-bug-workarounds --disable-gl-extensions --enable-parallel-downloading --enable-fast-unload --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36" --force-compositing-mode-2 --enable-low-res-tiling --enable-low-end-device-mode --enable-zero-copy --disable-software-rasterizer --disable-breakpad --disable-background-networking --disable-sync --disable-web-resources --autoplay-policy=user-gesture-required --disable-features=site-per-process,TranslateUI,BrowserTaskScheduler,RendererCodeIntegrity --disable-extensions --disable-default-apps --no-pings --no-referrers --enable-native-file-system-api --user-data-dir=/home/pi/chromium_profile --disk-cache-size=52428800 --window-size=550,700
+# chromium --disable-frame-rate-limit --enable-accelerated-2d-canvas --enable-zero-copy-dxgi-video --enable-oop-rasterization --enable-webgl --enable-low-latency --enable-vaapi --disable-accelerated-video-decode --enable-fast-unload --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-extensions --disable-sync --disable-translate --disable-breakpad --autoplay-policy=user-gesture-required --ignore-gpu-blacklist --force-video-resolution=webm --user-data-dir=/home/user/chromium_profile --window-size=550,700 --disable-gpu --disable-gpu-driver-bug-workarounds --disable-features=VariableContentCache --disable-background-video-optimization --disable-renderer-backgrounding --disk-cache-size=1073741824 --enable-smooth-scrolling --disable-gl-extensions --enable-parallel-downloading --force-compositing-mode-2
+
+## Baseline command
+#chromium --user-agent="Mozilla/5.0 (Linux; Android 7; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --enable-accelerated-2d-canvas --disable-background-networking --disable-software-rasterizer --force-effective-connection-type=4 --enable-fast-unload --disable-sync --disable-translate --enable-webgl --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --enable-accelerated-video-decode --enable-low-latency --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --force-video-resolution=240,webm --user-data-dir=/home/user/chromium_profile --window-size=550, 900
+
+## Test flags
+# --enable-accelerated-2d-canvas # Improves
+# --disable-background-networking # Improves!!
+# --disable-software-rasterizer # Improves
+# --force-effective-connection-type=4 # 50/50
+# --enable-fast-unload # kinda tries to stabilize previous flag
+# --disable-sync # Improves
+# --disable-translate # Improves
+# --enable-webgl # 50/50
+# --disable-breakpad # Somewhat stabilizes
+# --disable-crash-reporter # Improves
+# --disable-overlay-scrollbar # Improves
+# --enable-vaapi # Improves
+# --disable-accelerated-video-decode # Improves
+# --enable-low-latency # Improves
+
+# Final command
+chromium --disable-background-timer-throttling --disable-gpu-compositing --enable-low-end-device-mode --force-compositing-mode --disable-quic --enable-accelerated-2d-canvas --disable-plugins-discovery --disable-gpu --enable-low-res-tiling --enable-threaded-compositing --enable-zero-copy --num-raster-threads=2 --disable-gpu-vsync --use-gl=desktop --enable-low-latency --disable-accelerated-video-decode --enable-vaapi --disable-overlay-scrollbar --disable-crash-reporter --disable-breakpad --disable-translate --disable-sync --enable-fast-unload --force-effective-connection-4 --disable-background-networking --user-agent="Mozilla/5.0 (Linux; Android 9; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.138 Mobile Safari/537.36" --disable-background-networking --force-effective-connection-type=4 --enable-fast-unload --disable-sync --disable-translate --disable-breakpad --disable-crash-reporter --disable-overlay-scrollbar --enable-vaapi --disable-accelerated-video-decode --autoplay-policy=no-user-gesture-required --ignore-gpu-blacklist --user-data-dir=/home/user/chromium_profile --disable-3d-apis --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --disable-dev-shm-usage --disable-domain-reliability --disable-geolocation --disable-hang-monitor --disable-infobars --disable-notifications --disable-offer-upload-credit-cards --disable-overlay-scrollbar --disable-popup-blocking --disable-print-preview --disable-prompt-on-repost --disable-renderer-backgrounding --disable-restored-tab-launch-delay --disable-search-geolocation-disclosure --disable-software-rasterizer --disable-tab-for-desktop-share --disable-translate --disable-webgl --disk-cache-size=1048576
+
 ###### level 2 ######
