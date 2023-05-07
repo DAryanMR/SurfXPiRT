@@ -134,6 +134,10 @@ echo "Updating GPU driver & GPU memory size"
 rm -rf /etc/default/raspi-firmware
 cp /boot/firmware/opt/raspi-firmware /etc/default/raspi-firmware
 
+# Copy adjusted config.txt to /boot
+rm -rf /boot/config.txt
+cp /boot/firmware/opt/config.txt /boot/
+
 # Copy update-surfxpirt to /usr/local/bin
 echo "Copying surfxpirt-update-manager..."
 cp /boot/firmware/opt/update_manager/* /usr/local/bin
