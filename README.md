@@ -33,8 +33,9 @@ Run lsmod and make sure output looks like this otherwise modules didn't load pro
 ![lsmod-3](https://user-images.githubusercontent.com/132191670/236254945-736edd07-89aa-49b9-915c-6d9577b54b74.png)
 
 Open chromium-lightweight, go to chrome://flags, enable these features:
-[Screenshot from 2023-05-07 19-45-50.png.pdf](https://github.com/DAryanMR/SurfXPiRT/files/11415156/Screenshot.from.2023-05-07.19-45-50.png.pdf)
+![Screenshot from 2023-05-07 19-45-50](https://user-images.githubusercontent.com/132191670/236684295-49e6aadc-6dc5-4d8a-9579-7dbcf1b4f9d0.png)
 try using it in windowed mode because it provides stable fps.
+
 
 Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
