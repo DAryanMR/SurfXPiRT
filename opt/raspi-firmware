@@ -37,7 +37,7 @@ ROOTPART=LABEL=RASPIROOT
 # autodetected from /boot and started directly by the firmware, or the
 # name of the image to use from /boot/firmware
 #
-#KERNEL="auto"
+KERNEL="auto"
 
 # Pass initramfs address as parameter of the KERNEL image.
 # If you don't intend to pass an initramfs to the image started by the
@@ -48,7 +48,7 @@ ROOTPART=LABEL=RASPIROOT
 # of the KERNEL image. It can also be set to "no", in this case no
 # initramfs will be handled at all by the firmware.
 #
-#INITRAMFS="auto"
+INITRAMFS="auto"
 
 # Consoles to use for logging. This is a list separated by spaces.
 # A tty will be put on all consoles contained in this list, but the last
@@ -87,7 +87,7 @@ ROOTPART=LABEL=RASPIROOT
 # will be ignored if your board does not identify as a RPi 4 (any
 # model) or p400.
 #
-#GPU_FREQ="auto"
+GPU_FREQ="auto"
 
 # Force the architecture to install the kernel as. You will most
 # likely want to leave this setting alone; the only use case I have
@@ -108,4 +108,4 @@ ROOTPART=LABEL=RASPIROOT
 # all in a single line, no comments!
 
 dtoverlay=vc4-fkms-v3d
-gpu_mem=356
+#gpu_mem=256
