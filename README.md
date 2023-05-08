@@ -3,7 +3,7 @@
 Update: After cloning and booting to eMMC;
 - Run 'sudo rc-local' to connect to your default network. 
 - Then run 'sudo update-surfxpirt' to get latest updates of custom scripts and configs.
-This way you won't have to manually configure the packages after cloning.
+This way you won't have to manually configure the packages after cloning. (You still have to resize the filesystem tho.)
 
 I attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
@@ -41,7 +41,7 @@ Pro Tip: Use it in portrait mode for best standalone performance:
 Open arandr, click on Layout,open,standalone-portrait.sh, open, hit apply
 
 Notes: 
-1. Navigate to Menu -> Internet , open chromium-lightweight, I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;) [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
+1. Navigate to Menu -> Internet , open chromium-lightweight, I've highly optimized it to deliver the best performance, it runs websites on Android 7's platform, which helps it easily render them. Minimising it suspends the browser which makes other tasks smoother. There should also be a directory in your Desktop named standalone-apps, where you'll find the desktop apps including the modified browser, try them out. You can type in "chromium-lightweight" without the quotes from anywhere in the terminal and it'll run as well. Let me know how it performs ;) [Pending: libwidevine installation to test out how Netflix performs. (will do that soon hopefully) ]
 2. It's best to run videos on youtube using windowed mode of chromium-lightweight with default playback quality, it performs pretty well and I'm planning on tweaking it to do even better. 
 3. On startup, open the rt-wifi-client and click on 'Auto-connect', choose yes & you should be connected to the internet.
 4. Use the rt-wifi-client's 'Scan' & 'Connect' option only to connect to new wifi ssids when your default wifi is down or if you're away from it.
