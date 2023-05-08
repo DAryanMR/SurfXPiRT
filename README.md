@@ -47,4 +47,4 @@ Notes:
 4. Use the rt-wifi-client's 'Scan' & 'Connect' option only to connect to new wifi ssids when your default wifi is down or if you're away from it.
 If you're already connected to a network then tapping on scan one time might not pop up other ssids, keep slamming the scan button until you see the ssids popping up, while selecting, slam your wifi ssid too if you dont see 'psk for: your_ssid' popping above the password prompt. Tap on connect after you see that on the password prompt.
 If the wifi client doesn't connect you to the internet reboot to check if you can normally connect.
-5. Do not turn on the device with any usb devices plugged in, plug usb devices after the kernel starts loading up if you notice your touchscreen throwing tantrums or eventually stop functioning until next reboot.
+5. If video streaming is the one & only thing in your life then this might not be the most perfect distro for you, but if it's one of all the things you want to do, then go ahead give it a try.
