@@ -13,7 +13,7 @@ drm
 # Vulkan drivers
 vulkan
 # Touchscreen
-#i2c-dev
+i2c-dev
 #i2c-cros-ec-tunnel
 # Touchpad
 #psmouse
