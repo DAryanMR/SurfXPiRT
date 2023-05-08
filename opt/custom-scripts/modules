@@ -6,18 +6,18 @@
 
 ## Startup modules
 # Wireless Interface
-#mwifiex
-#cfg80211
+mwifiex
+cfg80211
 # Core GPU driver
 drm
 # Vulkan drivers
 vulkan
 # Touchscreen
-i2c-dev
+#i2c-dev
 #i2c-cros-ec-tunnel
 # Touchpad
 #psmouse
 # Bluetooth
 #bluetooth
-btusb
+#btusb
 
