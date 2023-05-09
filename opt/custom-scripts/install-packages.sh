@@ -20,6 +20,7 @@ echo "Started query for packages...."
 echo ""
 echo ""
 apt-get -y install volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
+# apt-get -y install volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-xfce-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
 echo ""
 echo ""
 echo "Packages installed!"
@@ -51,19 +52,22 @@ chmod -R +x /home/pi/Desktop/standalone-apps/
 echo "Copying Executable scripts to /usr/local/bin"
 cp -r /boot/firmware/opt/bin/* /usr/local/bin/
 # exec rights
-chmod -R +x /usr/local/bin/
+# chmod -R +x /usr/local/bin/
 echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
 
 # Copy exceptional scripts to /etc
+rm -rf /etc/clone-disk-par.sh
+rm -rf /etc/load-supp-drivers.sh
 echo "Copying exceptional scripts to /etc"
 cp -r /boot/firmware/opt/custom-scripts/exceptionals/* /etc
-chmod -R +x /etc/
+# chmod -R +x /etc/
 
 # Copying autostart entries to /etc/xdg/autostart/
+rm -rf /etc/xdg/autostart/Xcompmgr.desktop
 echo "Copying autostart entries to /etc/xdg/autostart"
 cp /boot/firmware/opt/autostart/* /etc/xdg/autostart/
-# Making it executable
-chmod -R +x /etc/xdg/autostart/
+# # Making it executable
+# chmod -R +x /etc/xdg/autostart/
 
 # Copying ARandr display orientations
 echo "Copying ARandr display orientations"
@@ -85,13 +89,15 @@ cp /boot/firmware/opt/sudoers /etc/sudoers
 #chmod +x /etc/sudoers
 
 # Copy systemd services
+rm -rf /etc/systemd/system/my-rc-local.service
+rm -rf /etc/systemd/system/wpa_supplicant.service
 echo "Copying systemd services"
 cp -r /boot/firmware/opt/systemd/* /etc/systemd/system/
 
 # Copy modules to /etc
-echo "Copying auto-loading modules..."
-rm -rf /etc/modules
-cp /boot/firmware/opt/custom-scripts/modules /etc
+#echo "Copying auto-loading modules..."
+#rm -rf /etc/modules
+#cp /boot/firmware/opt/custom-scripts/modules /etc
 #chmod +x /etc/modules
 
 # Disable failed/unnecessary services
@@ -99,7 +105,7 @@ echo "Disabling failed/unnecessary services.."
 echo ""
 echo ""
 systemctl disable rc-local.service
-systemctl disable connman-wait-online.service
+#systemctl disable connman-wait-online.service
 #systemctl disable osspd.service
 systemctl mask systemd-binfmt.service
 
@@ -130,9 +136,9 @@ echo ""
 echo ""
 
 # Copy adjusted raspi-firmware to fs
-echo "Updating GPU driver & GPU memory size"
+echo "Updating GPU driver"
 rm -rf /etc/default/raspi-firmware
-cp /boot/firmware/opt/raspi-firmware /etc/default/raspi-firmware
+cp /boot/firmware/opt/raspi-firmware /etc/default/
 
 # Copy adjusted config.txt to /boot
 rm -rf /boot/config.txt
@@ -141,7 +147,13 @@ cp /boot/firmware/opt/config.txt /boot/
 # Copy update-surfxpirt to /usr/local/bin
 echo "Copying surfxpirt-update-manager..."
 cp /boot/firmware/opt/update_manager/* /usr/local/bin
-echo "Now you can run 'sudo update-surfxpirt' after cloning to eMMC to get latest updates for your Surface RT"
+echo "Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get latest updates for your Surface RT"
+
+# Generating initrd.img
+echo "Generating 5.17-rc3 initrd.img"
+cp /boot/firmware/opt/bootloader/zImage /boot/initrd.img-5.17.x.x-armmp
+rm -rf /boot/initrd.img-6.* && rm -rf /boot/vmlinuz-6.*
+update-initramfs -u -k all
 
 echo ""
 echo ""
