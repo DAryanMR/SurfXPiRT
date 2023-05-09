@@ -1,4 +1,4 @@
-# SurfXPiRT (Stable Debian 12 + LXDE for the Surface RT )
+# SurfXPiRT (Stable Debian 12 + XFCE for the Surface RT )
 
 Update: Desktop environment has been changed from LXDE to XFCE due to it's more modern nature and touch friendlier env.
 
@@ -7,7 +7,7 @@ After cloning and booting to eMMC;
 - Then run 'sudo update-surfxpirt' to get latest updates of custom scripts and configs.
 This way you won't have to manually configure the packages after cloning. (You still have to resize the filesystem tho.)
 
-I attempted to install Vanilla Debian with LXDE Desktop environment on Microsoft's legendary Surface RT, 
+I attempted to install Vanilla Debian with XFCE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
 
 Supported features: WiFi, Bluetooth, HWA, Audio Output, VLC, WebGL, Responsive Touchscreen, thermal management, etc.
