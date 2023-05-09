@@ -45,7 +45,8 @@ echo "Copying standalone apps to Desktop"
 mkdir -p /home/pi/Desktop/standalone-apps
 # copying..
 cp -r /boot/firmware/opt/d_apps/* /home/pi/Desktop/standalone-apps
-# Making all desktop apps executable
+# Owning and Making all desktop apps executable
+chown pi ~/Desktop/standalone-apps/
 chmod -R +x /home/pi/Desktop/standalone-apps/
 
 # Copying scripts to /usr/local/bin/
