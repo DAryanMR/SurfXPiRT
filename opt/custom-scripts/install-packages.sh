@@ -25,7 +25,6 @@ echo ""
 echo "Started query for packages...."
 echo ""
 echo ""
-# apt-get -y install locales volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
 apt-get -y install locales volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-xfce-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
 dpkg-reconfigure locales
 echo ""
@@ -41,7 +40,7 @@ echo ""
 
 ####################################################################################
 # Copying background images to /usr/share/backgrounds
-rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lock-screen.jpg
+# rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lockscreen.jpg
 echo "Copying Desktop backgrounds"
 cp -r /boot/firmware/opt/images/backgrounds/* /usr/share/backgrounds/
 
@@ -54,7 +53,7 @@ chmod -R +x /usr/share/applications/
 echo "Copying standalone apps to Desktop"
 # Making a desktop dir to store
 # miscellaneous standalone apps like these
-mkdir -p /home/pi/Desktop/standalone-apps
+rm -rf /home/pi/Desktop/standalone-apps && mkdir -p /home/pi/Desktop/standalone-apps
 # copying..
 cp -r /boot/firmware/opt/d_apps/* /home/pi/Desktop/standalone-apps
 # Owning and Making all desktop apps executable
@@ -69,14 +68,14 @@ cp -r /boot/firmware/opt/bin/* /usr/local/bin/
 echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
 
 # Copy exceptional scripts to /etc
-rm -rf /etc/clone-disk-par.sh
-rm -rf /etc/load-supp-drivers.sh
+# rm -rf /etc/clone-disk-par.sh
+# rm -rf /etc/load-supp-drivers.sh
 echo "Copying exceptional scripts to /etc"
 cp -r /boot/firmware/opt/custom-scripts/exceptionals/* /etc
 # chmod -R +x /etc/
 
 # Copying autostart entries to /etc/xdg/autostart/
-rm -rf /etc/xdg/autostart/Xcompmgr.desktop
+# rm -rf /etc/xdg/autostart/Xcompmgr.desktop
 echo "Copying autostart entries to /etc/xdg/autostart"
 cp /boot/firmware/opt/autostart/* /etc/xdg/autostart/
 # # Making it executable
@@ -90,8 +89,7 @@ chmod -R +x /home/pi/.screenlayout/
 
 # Copying daisy.mp4 to test if vlc works
 echo "Copying daisy.mp4 for video playback test"
-rm -rf /home/pi/Videos
-mkdir -p /home/pi/Videos && cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos
+cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos
 
 # Modify sudoers to execute PiRT-WiFi-Client without password
 echo "Getting rights to execute PiRT-Wifi-Client without password"
@@ -99,7 +97,7 @@ echo "Getting rights to execute PiRT-Wifi-Client without password"
 rm -rf /etc/sudoers
 # Copying modified /etc/sudoers to run the wifi client without password
 cp /boot/firmware/opt/sudoers /etc/sudoers
-#chmod +x /etc/sudoers
+chmod +x /etc/sudoers
 
 # Copy systemd services
 rm -rf /etc/systemd/system/my-rc-local.service
