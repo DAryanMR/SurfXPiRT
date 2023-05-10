@@ -58,7 +58,7 @@ mkdir -p /home/pi/Desktop/standalone-apps
 # copying..
 cp -r /boot/firmware/opt/d_apps/* /home/pi/Desktop/standalone-apps
 # Owning and Making all desktop apps executable
-chown pi ~/Desktop/standalone-apps/
+chown pi /home/pi/Desktop/standalone-apps/
 chmod -R +x /home/pi/Desktop/standalone-apps/
 
 # Copying scripts to /usr/local/bin/
