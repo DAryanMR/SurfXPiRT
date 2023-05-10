@@ -27,7 +27,7 @@ A lot of tweaks are still left undone, I'll find some of which are  to be tweake
 - Enable virtual keyboard for xscreensaver lock   (Still not implemented) Screen can be brought back from locked state without physical keyboard but if you suspend the system then you'll need a keyboard to unlock it again. :(
 - libwidevine installation to test out how Netflix performs. (will do that soon hopefully)
 
-Open chromium-lightweight, go to chrome://flags, enable these features:
+Open chromium-lightweight, go to chrome://flags, enable these flags:
 ![Screenshot from 2023-05-07 19-45-50](https://user-images.githubusercontent.com/132191670/236684295-49e6aadc-6dc5-4d8a-9579-7dbcf1b4f9d0.png)
 
 try using it in windowed mode because it provides stable fps.
