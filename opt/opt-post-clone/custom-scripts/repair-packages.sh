@@ -64,8 +64,10 @@ cp -r /boot/opt/d_apps/* /home/pi/Desktop/standalone-apps
 chmod -R +x /home/pi/Desktop/standalone-apps/
 
 # Copying scripts to /usr/local/bin/
+rm -rf /usr/local/bin/chromium-lightweight && rm -rf /usr/local/bin/pingman
 echo "Copying Executable scripts to /usr/local/bin"
-cp -r /boot/opt/bin/* /usr/local/bin/
+cp -r /boot/opt/bin/chromium-lightweight /usr/local/bin/
+cp -r /boot/opt/bin/pingman /usr/local/bin/
 # exec rights
 # chmod -R +x /usr/local/bin/
 echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
@@ -78,17 +80,17 @@ cp -r /boot/opt/custom-scripts/exceptionals/* /etc
 # chmod -R +x /etc/
 
 # Copying autostart entries to /etc/xdg/autostart/
-rm -rf /etc/xdg/autostart/Xcompmgr.desktop
-echo "Copying autostart entries to /etc/xdg/autostart"
-cp /boot/opt/autostart/* /etc/xdg/autostart/
+#rm -rf /etc/xdg/autostart/Xcompmgr.desktop
+#echo "Copying autostart entries to /etc/xdg/autostart"
+#cp /boot/opt/autostart/* /etc/xdg/autostart/
 # # Making it executable
 # chmod -R +x /etc/xdg/autostart/
 
 # Copying ARandr display orientations
-echo "Copying ARandr display orientations"
-rm -rf /home/pi/.screenlayout
-mkdir -p /home/pi/.screenlayout && cp -r /boot/opt/screen_layouts/* /home/pi/.screenlayout/
-chmod -R +x /home/pi/.screenlayout/
+#echo "Copying ARandr display orientations"
+#rm -rf /home/pi/.screenlayout
+#mkdir -p /home/pi/.screenlayout && cp -r /boot/opt/screen_layouts/* /home/pi/.screenlayout/
+#chmod -R +x /home/pi/.screenlayout/
 
 # Copying daisy.mp4 to test if vlc works
 #echo "Copying daisy.mp4 for video playback test"
@@ -101,13 +103,13 @@ echo "Getting rights to execute PiRT-Wifi-Client without password"
 rm -rf /etc/sudoers
 # Copying modified /etc/sudoers to run the wifi client without password
 cp /boot/opt/sudoers /etc/sudoers
-#chmod +x /etc/sudoers
+chmod +x /etc/sudoers
 
 # Copy systemd services
-rm -rf /etc/systemd/system/my-rc-local.service
-rm -rf /etc/systemd/system/wpa_supplicant.service
-echo "Copying systemd services"
-cp -r /boot/opt/systemd/* /etc/systemd/system/
+#rm -rf /etc/systemd/system/my-rc-local.service
+#rm -rf /etc/systemd/system/wpa_supplicant.service
+#echo "Copying systemd services"
+#cp -r /boot/opt/systemd/* /etc/systemd/system/
 
 # Copy modules to /etc
 #echo "Copying auto-loading modules..."
@@ -160,9 +162,9 @@ systemctl enable my-rc-local.service
 # cp /boot/opt/config.txt /boot/
 
 # Copy update-surfxpirt to /usr/local/bin
-rm -rf /usr/local/bin/update-surfxpirt
-echo "Copying surfxpirt-update-manager..."
-cp /boot/opt/update_manager/* /usr/local/bin
+#rm -rf /usr/local/bin/update-surfxpirt
+#echo "Copying surfxpirt-update-manager..."
+#cp /boot/opt/update_manager/* /usr/local/bin
 echo "Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get latest updates for your Surface RT"
 
 # # Generating initrd.img
@@ -174,6 +176,6 @@ echo "Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get lat
 
 echo ""
 echo ""
-echo "Packages reconfigured successfully..Reboot now"
+echo "Packages reconfigured successfully.."
 
 exit 0
