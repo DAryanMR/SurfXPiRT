@@ -67,12 +67,14 @@ echo "Updating sudoers"
 rm -rf /mnt/d/etc/sudoers
 cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
 #####################
-# Copy updated rt-wifi-cli
-echo "Updating rt-wifi-cli"
-rm -rf /mnt/d/usr/share/applications/rt-wifi-cli.desktop
+# Copy updated desktop files
+echo "Updating desktop files"
+rm -rf /mnt/d/usr/share/applications/rt-wifi-cli.desktop && rm -rf /mnt/d/usr/share/applications/pingman.desktop
 cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/usr/share/applications/
-rm -rf /mnt/d/home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop
+cp /boot/firmware/opt/opt-post-clone/d_apps/pingman.desktop /mnt/d/usr/share/applications/
+rm -rf /mnt/d/home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop && rm -rf /mnt/d/home/pi/Desktop/standalone-apps/pingman.desktop
 cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/home/pi/Desktop/standalone-apps/
+cp /boot/firmware/opt/opt-post-clone/d_apps/pingman.desktop /mnt/d/home/pi/Desktop/standalone-apps/
 # Unmount fs
 echo "Unmounting /dev/mmcblk0p2 ..."
 umount /dev/mmcblk0p2
