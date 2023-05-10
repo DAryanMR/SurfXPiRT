@@ -45,12 +45,14 @@
 #cp -r /boot/opt/images/backgrounds/* /usr/share/backgrounds/
 
 # Copying desktop apps to /usr/share/applications
+echo "Removing previous rt-wifi-cli from applications"
 rm -rf /usr/share/applications/rt-wifi-cli.desktop
-echo "Copying standalone apps to /usr/share/applications"
+echo "Copying new rt-wifi-cli to applications"
 cp /boot/opt/d_apps/rt-wifi-cli.desktop /usr/share/applications
 chmod -R +x /usr/share/applications/
 
 # Copying desktop apps to /home/pi/Desktop
+echo "Removing previous rt-wifi-cli from Desktop"
 rm -rf /home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop
 echo "Copying rt-wifi-cli to Desktop"
 
