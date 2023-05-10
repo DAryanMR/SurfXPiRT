@@ -91,9 +91,9 @@ mkdir -p /home/pi/.screenlayout && cp -r /boot/opt/screen_layouts/* /home/pi/.sc
 chmod -R +x /home/pi/.screenlayout/
 
 # Copying daisy.mp4 to test if vlc works
-echo "Copying daisy.mp4 for video playback test"
-rm -rf /home/pi/Videos
-mkdir -p /home/pi/Videos && cp /boot/opt/videos/daisy.mp4 /home/pi/Videos
+#echo "Copying daisy.mp4 for video playback test"
+#rm -rf /home/pi/Videos
+#mkdir -p /home/pi/Videos && cp /boot/opt/videos/daisy.mp4 /home/pi/Videos
 
 # Modify sudoers to execute PiRT-WiFi-Client without password
 echo "Getting rights to execute PiRT-Wifi-Client without password"
