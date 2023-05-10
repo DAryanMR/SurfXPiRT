@@ -13,7 +13,5 @@ upstream_kernel=1
 #kernel=
 # For details on the initramfs directive, see
 # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=10532
-initramfs initrd.img-5.17.x-armmp
+initramfs initrd.img-5.17.x.x-armmp
 
-#dtoverlay=vc4-fkms-v3d
-#gpu_mem=356
