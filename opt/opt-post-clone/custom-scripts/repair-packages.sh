@@ -7,18 +7,18 @@
 #echo ""
 #echo ""
 
-echo "Upgrading packages to fulfill unmet dependencies:::"
-echo ""
-echo ""
-apt update
-apt upgrade -y
+#echo "Upgrading packages to fulfill unmet dependencies:::"
+#echo ""
+#echo ""
+#apt update
+#apt upgrade -y
 #####################
 ## Updating apt-get and installing necessary packages
-apt-get update
-apt-get -y upgrade
-echo ""
-echo ""
-echo "Successfully upgraded bookworm packages! Now installing new packages.."
+#apt-get update
+#apt-get -y upgrade
+#echo ""
+#echo ""
+#echo "Successfully upgraded bookworm packages! Now installing new packages.."
 #####################
 #echo ""
 #echo ""
@@ -36,7 +36,7 @@ echo "Successfully upgraded bookworm packages! Now installing new packages.."
 #echo ""
 # Purge unnecessary packages
 #apt-get -y purge brltty *firefox* --autoremove
-echo ""
+#echo ""
 
 ####################################################################################
 # Copying background images to /usr/share/backgrounds
