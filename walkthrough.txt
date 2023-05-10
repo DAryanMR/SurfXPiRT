@@ -1,0 +1,24 @@
+### Debian 12 (Bookworm) for the Surface RT | Walkthrough
+### In dept shown in video tutorial, text walkthrough will be added here soon.
+
+After initially booting from the usb, follow some preliminary steps:
+  mount /dev/mmcblk0p1 /boot/firmware
+  resize filesystem using fdisk & resize2fs;
+  update fstab values to mount:
+    /dev/mmcblk1p2  as   /
+    /dev/mmcblk1p1  as   /boot/firmware 
+  update hostname && hosts;
+  create user 'pi'; get sudo rights for pi; (must name it pi for the scripts to work!)
+
+then:
+  make opt dir executable using chmod -R +x /boot/firmware/opt
+  move to /opt/custom-scripts/ 
+
+    run the scripts serialwise (and follow any on-screen instructions):
+      load-drivers;
+      wifi-setup;
+      install-packages;
+      install-vulkan;
+      clone-disk;
+
+Voila! Your device is ready for daily use.
