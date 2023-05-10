@@ -41,7 +41,7 @@ echo ""
 
 ####################################################################################
 # Copying background images to /usr/share/backgrounds
-rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lockscreen.jpg
+rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lock-screen.jpg
 echo "Copying Desktop backgrounds"
 cp -r /boot/firmware/opt/images/backgrounds/* /usr/share/backgrounds/
 
