@@ -2,10 +2,10 @@
 
 ####################################################################################
 # Removing lxde desktop from previous installation if any
-echo "Removing previous lxde desktop installation if any"
-apt purge -y task-lxde-desktop --autoremove
-echo ""
-echo ""
+#echo "Removing previous lxde desktop installation if any"
+#apt purge -y task-lxde-desktop --autoremove
+#echo ""
+#echo ""
 
 echo "Upgrading packages to fulfill unmet dependencies:::"
 echo ""
@@ -20,29 +20,29 @@ echo ""
 echo ""
 echo "Successfully upgraded bookworm packages! Now installing new packages.."
 #####################
-echo ""
-echo ""
-echo "Started query for packages...."
-echo ""
-echo ""
+#echo ""
+#echo ""
+#echo "Started query for packages...."
+#echo ""
+#echo ""
 # apt-get -y install volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-lxde-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
-apt-get -y install locales volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-xfce-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
-echo ""
-echo ""
-echo "Packages installed!"
+#apt-get -y install locales volumeicon-alsa libgl1-mesa-glx arandr pulseaudio pulseaudio-module-bluetooth xserver-xorg-input-libinput libinput-bin libinput-dev xinput xinput-calibrator xcompmgr ntp net-tools wireless-tools rfkill build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev curl vlc python3-vlc libblas-dev libopenblas-dev python3-pil.imagetk xserver-xorg xinit x11-utils x11-touchscreen-calibrator xserver-xorg-input-evdev xscreensaver xscreensaver-gl-extra xscreensaver-data-extra task-xfce-desktop blueman bluez software-properties-common libavcodec-* alsa-utils libgtk-3-dev ffmpeg libglvnd0 xvkbd onboard pm-utils python3-tk chromium xfce4-power-manager libgles2-mesa-dev libxcb-randr0-dev libxrandr-dev libxcb-xinerama0-dev libxinerama-dev libxcursor-dev libxcb-cursor-dev libxkbcommon-dev xutils-dev xutils-dev libpthread-stubs0-dev libpciaccess-dev libffi-dev x11proto-xext-dev libxcb1-dev libxcb-*dev libssl-dev libgnutls28-dev x11proto-dri2-dev libx11-dev libxcb-glx0-dev libx11-xcb-dev libxext-dev libxdamage-dev libxfixes-dev libva-dev x11proto-randr-dev x11proto-present-dev libelf-dev mesa-utils libvulkan-dev libvulkan1 libassimp-dev libdrm-dev libxshmfence-dev libxxf86vm-dev libunwind-dev libwayland-dev wayland-protocols libwayland-egl-backend-dev valgrind libzstd-dev vulkan-tools git build-essential bison flex ninja-build python3-mako python3-pip cmake g++ make build-essential git dkms
+#echo ""
+#echo ""
+#echo "Packages installed!"
 #####################
-echo "Purging brltty & firefox...."
-echo ""
-echo ""
+#echo "Purging brltty & firefox...."
+#echo ""
+#echo ""
 # Purge unnecessary packages
-apt-get -y purge brltty *firefox* --autoremove
+#apt-get -y purge brltty *firefox* --autoremove
 echo ""
 
 ####################################################################################
 # Copying background images to /usr/share/backgrounds
-rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lockscreen.jpg
-echo "Copying Desktop backgrounds"
-cp -r /boot/opt/images/backgrounds/* /usr/share/backgrounds/
+#rm -rf /usr/share/backgrounds/d_bg.jpg && rm -rf /usr/share/backgrounds/lockscreen.jpg
+#echo "Copying Desktop backgrounds"
+#cp -r /boot/opt/images/backgrounds/* /usr/share/backgrounds/
 
 # Copying desktop apps to /usr/share/applications
 rm -rf /usr/share/applications/chromium-lightweight.desktop
@@ -73,10 +73,10 @@ cp -r /boot/opt/bin/pingman /usr/local/bin/
 echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
 
 # Copy exceptional scripts to /etc
-rm -rf /etc/clone-disk-par.sh
-rm -rf /etc/load-supp-drivers.sh
-echo "Copying exceptional scripts to /etc"
-cp -r /boot/opt/custom-scripts/exceptionals/* /etc
+#rm -rf /etc/clone-disk-par.sh
+#rm -rf /etc/load-supp-drivers.sh
+#echo "Copying exceptional scripts to /etc"
+#cp -r /boot/opt/custom-scripts/exceptionals/* /etc
 # chmod -R +x /etc/
 
 # Copying autostart entries to /etc/xdg/autostart/
@@ -127,20 +127,20 @@ chmod +x /etc/sudoers
 # systemctl mask systemd-binfmt.service
 
 # Reload system daemons
-echo "Reloading system daemons"
-systemctl daemon-reload
+#echo "Reloading system daemons"
+#systemctl daemon-reload
 
 # Enable systemd-networkd service
-echo "Enabling systemd-networkd service"
-systemctl enable systemd-networkd.service
+#echo "Enabling systemd-networkd service"
+#systemctl enable systemd-networkd.service
 
 # Enable wpa_sup service
-echo "Enabling wpa_supplicant service"
-systemctl enable wpa_supplicant.service
+#echo "Enabling wpa_supplicant service"
+#systemctl enable wpa_supplicant.service
 
 # Enable custom rc-local
-echo "Enabling my-rc-local services"
-systemctl enable my-rc-local.service
+#echo "Enabling my-rc-local services"
+#systemctl enable my-rc-local.service
 
 # ## Setup lightdm-gtk-greeter
 # echo "Copying modified lightdm configs.."
@@ -165,7 +165,7 @@ systemctl enable my-rc-local.service
 #rm -rf /usr/local/bin/update-surfxpirt
 #echo "Copying surfxpirt-update-manager..."
 #cp /boot/opt/update_manager/* /usr/local/bin
-echo "Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get latest updates for your Surface RT"
+#echo "Now you can run 'sudo update-surfxpirt' (after cloning to eMMC) to get latest updates for your Surface RT"
 
 # # Generating initrd.img
 # echo "Generating 5.17-rc3 initrd.img"
