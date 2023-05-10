@@ -45,11 +45,9 @@ echo ""
 #cp -r /boot/opt/images/backgrounds/* /usr/share/backgrounds/
 
 # Copying desktop apps to /usr/share/applications
-rm -rf /usr/share/applications/chromium-lightweight.desktop
-rm -rf /usr/share/applications/pingman.desktop
 rm -rf /usr/share/applications/rt-wifi-cli.desktop
 echo "Copying standalone apps to /usr/share/applications"
-cp -r /boot/opt/d_apps/* /usr/share/applications
+cp /boot/opt/d_apps/rt-wifi-cli.desktop /usr/share/applications
 chmod -R +x /usr/share/applications/
 
 # Copying desktop apps to /home/pi/Desktop
@@ -64,13 +62,13 @@ cp -r /boot/opt/d_apps/* /home/pi/Desktop/standalone-apps
 chmod -R +x /home/pi/Desktop/standalone-apps/
 
 # Copying scripts to /usr/local/bin/
-rm -rf /usr/local/bin/chromium-lightweight && rm -rf /usr/local/bin/pingman
-echo "Copying Executable scripts to /usr/local/bin"
-cp -r /boot/opt/bin/chromium-lightweight /usr/local/bin/
-cp -r /boot/opt/bin/pingman /usr/local/bin/
+#rm -rf /usr/local/bin/chromium-lightweight && rm -rf /usr/local/bin/pingman
+#echo "Copying Executable scripts to /usr/local/bin"
+#cp -r /boot/opt/bin/chromium-lightweight /usr/local/bin/
+#cp -r /boot/opt/bin/pingman /usr/local/bin/
 # exec rights
 # chmod -R +x /usr/local/bin/
-echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
+#echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywhere in the terminal to launch these scripts"
 
 # Copy exceptional scripts to /etc
 #rm -rf /etc/clone-disk-par.sh
@@ -98,12 +96,12 @@ echo "Now you can run  -> chromium-lightweight, pingman <- commands from anywher
 #mkdir -p /home/pi/Videos && cp /boot/opt/videos/daisy.mp4 /home/pi/Videos
 
 # Modify sudoers to execute PiRT-WiFi-Client without password
-echo "Getting rights to execute PiRT-Wifi-Client without password"
+#echo "Getting rights to execute PiRT-Wifi-Client without password"
 # Removing previous sudoers
-rm -rf /etc/sudoers
+#rm -rf /etc/sudoers
 # Copying modified /etc/sudoers to run the wifi client without password
-cp /boot/opt/sudoers /etc/sudoers
-chmod +x /etc/sudoers
+#cp /boot/opt/sudoers /etc/sudoers
+#chmod +x /etc/sudoers
 
 # Copy systemd services
 #rm -rf /etc/systemd/system/my-rc-local.service
