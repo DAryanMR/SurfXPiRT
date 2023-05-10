@@ -32,6 +32,7 @@ A lot of tweaks are still left undone, I'll find some of which are  to be tweake
 
 Open chromium-lightweight, go to chrome://flags, enable these features:
 ![Screenshot from 2023-05-07 19-45-50](https://user-images.githubusercontent.com/132191670/236684295-49e6aadc-6dc5-4d8a-9579-7dbcf1b4f9d0.png)
+
 try using it in windowed mode because it provides stable fps.
 
 
