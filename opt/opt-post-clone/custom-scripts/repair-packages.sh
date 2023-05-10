@@ -51,13 +51,10 @@ cp /boot/opt/d_apps/rt-wifi-cli.desktop /usr/share/applications
 chmod -R +x /usr/share/applications/
 
 # Copying desktop apps to /home/pi/Desktop
-rm -rf /home/pi/Desktop/standalone-apps
-echo "Copying standalone apps to Desktop"
-# Making a desktop dir to store
-# miscellaneous standalone apps like these
-mkdir -p /home/pi/Desktop/standalone-apps
-# copying..
-cp -r /boot/opt/d_apps/* /home/pi/Desktop/standalone-apps
+rm -rf /home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop
+echo "Copying rt-wifi-cli to Desktop"
+
+cp /boot/opt/d_apps/rt-wifi-cli.desktop /home/pi/Desktop/standalone-apps
 # Making all desktop apps executable
 chmod -R +x /home/pi/Desktop/standalone-apps/
 
