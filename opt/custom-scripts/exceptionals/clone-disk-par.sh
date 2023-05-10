@@ -63,9 +63,16 @@ cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/sbin
 chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 #####################
 # Copy updated sudoers to fs
+echo "Updating sudoers"
 rm -rf /mnt/d/etc/sudoers
 cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
 #####################
+# Copy updated rt-wifi-cli
+echo "Updating rt-wifi-cli"
+rm -rf /mnt/d/usr/share/applications/rt-wifi-cli.desktop
+cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/usr/share/applications/
+rm -rf /mnt/d/home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop
+cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/home/pi/Desktop/standalone-apps/
 # Unmount fs
 echo "Unmounting /dev/mmcblk0p2 ..."
 umount /dev/mmcblk0p2
