@@ -2,10 +2,7 @@
 
 Update: Desktop environment has been changed from LXDE to XFCE due to it's more modern nature and touch friendlier env.
 
-After cloning and booting to eMMC;
-- Run 'sudo rc-local' to connect to your default network. 
-- Then run 'sudo update-surfxpirt' to get latest updates of custom scripts and configs.
-This way you won't have to manually configure the packages after cloning. (You still have to resize the filesystem tho.)
+After cloning and booting to eMMC you won't have to update config.txt and desktop files anymore, they are done automatically while cloning.
 
 I attempted to install Vanilla Debian with XFCE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
