@@ -7,7 +7,14 @@ echo ""
 echo "Delete and create mmcblk1p2 (of atleast 8GB) to proceed installation"
 # Resizing the filesystem 
 # Delete and create new mmcblk1p2 using fdisk
-fdisk /dev/mmcblk1
+echo "d
+2
+n
+p
+2
+1048576
+
+w" | fdisk /dev/mmcblk1
 # Assuming that you have created the new partition
 # Resize it using resize2fs
 echo "Resizing filesystem.."
