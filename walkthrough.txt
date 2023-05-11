@@ -1,9 +1,9 @@
 ### Debian 12 (Bookworm) for the Surface RT | Walkthrough
 ### In dept shown in video tutorial, text walkthrough will be added here soon.
 
-Experimental
-
-New one-command-installer
+# (Experimental)
+        👇
+# New one-command-installer
 
 On initial boot:
 
