@@ -43,6 +43,7 @@ mkdir -p /home/pi/.screenlayout && cp -r /boot/firmware/opt/screen_layouts/* /ho
 chmod -R +x /home/pi/.screenlayout/
 
 # Copy daisy.mp4 for testing VLC
+rm -rf /home/pi/Videos && mkdir -p /home/pi/Videos
 cp /boot/firmware/opt/videos/daisy.mp4 /home/pi/Videos/
 
 # Modify sudoers to execute PiRT-WiFi-Client without password
