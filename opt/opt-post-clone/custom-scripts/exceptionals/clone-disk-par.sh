@@ -69,6 +69,13 @@ cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
 # Unmount fs
 echo "Unmounting /dev/mmcblk0p2 ..."
 umount /dev/mmcblk0p2
+# Resize fs 
+echo "Create new mmcblk0p2 partition"
+fdisk /dev/mmcblk0
+echo "Checking for errors"
+e2fsck -f /dev/mmcblk0p2
+echo "Resizing filesystem"
+resize2fs /dev/mmcblk0p2
 echo ""
 echo "Clone successful."
 echo "Turn off device, remove SD card, and power it on normally. ;) "

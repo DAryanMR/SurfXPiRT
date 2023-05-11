@@ -16,6 +16,6 @@ ninja -C build install;
 
 echo ""
 echo ""
-echo "Vulkan Installed successfully, reboot now"
+echo "Vulkan Installed successfully!"
 ####################################################################################
 exit 0

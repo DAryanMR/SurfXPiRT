@@ -32,5 +32,5 @@ do
 done
 
 echo ""
-echo "Drivers loaded. You can cross still run it again to cross check, or Reboot and run 'wifi-setup.sh'." 
+echo "Drivers loaded. " 
 exit 0
