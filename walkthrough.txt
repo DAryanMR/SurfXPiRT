@@ -4,27 +4,21 @@
 # (Experimental)
         👇
 # New one-command-installer
-
 On initial boot:
-
 let start jobs
-
 Press Enter
-
-Run: mount /dev/mmcblk1p1 /boot/firmware
-
+Run, mount /dev/mmcblk1p1 /boot/firmware
 Press ctrl+d
-
 let start jobs
-
 login as 'root'
 
-Run: 
-
+Run the installer: 
 bash /boot/firmware/opt/custom-scripts/SurfUpXplosion.sh
 
-Creating new partition using fdisk:
-Run these commands serially:
+Follow on screen steps (Best if you watch the video once)
+
+(Creating new partition using fdisk)
+# Run these commands serially
 d
 2
 n
@@ -35,10 +29,7 @@ default (just press Enter)
 n
 w
 
-Follow on screen steps (Best if you watch the video once)
-
-(After cloning)
+(After cloning is finished..)
 Create new partition again for mmcblk0p2 in same way
-
 
 Turn it off, unplug everything, power it on normally. Voila! Your device is now ready for daily use.
