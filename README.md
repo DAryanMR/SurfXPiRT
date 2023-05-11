@@ -1,8 +1,8 @@
 # SurfXPiRT (Stable Debian 12 + XFCE for the Surface RT )
 
 Updates:
+- Added one-command-installer (SurfUpXplosion.sh) check walkthrough.txt
 - Desktop environment has been changed from LXDE to XFCE due to it's more modern nature and touch friendlier env.
-- After cloning and booting to eMMC you won't have to update config.txt and desktop files, sudoers anymore, they are done automatically while cloning.
 
 I attempted to install Vanilla Debian with XFCE Desktop environment on Microsoft's legendary Surface RT, 
 and hopefully tried to take the opensurface project one step further. 
