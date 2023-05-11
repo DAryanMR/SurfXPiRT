@@ -1,7 +1,7 @@
 # SurfXPiRT (Stable Debian 12 + XFCE for the Surface RT )
 
 Updates:
-- Added one-command-installer (SurfUpXplosion.sh) check walkthrough.txt
+- Added one-command-installer (SurfUpXplosion), check walkthrough.txt
 - Desktop environment has been changed from LXDE to XFCE due to it's more modern nature and touch friendlier env.
 
 I attempted to install Vanilla Debian with XFCE Desktop environment on Microsoft's legendary Surface RT, 
