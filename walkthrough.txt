@@ -17,19 +17,4 @@ bash /boot/firmware/opt/custom-scripts/SurfUpXplosion.sh
 
 Follow on screen steps (Best if you watch the video once)
 
-(Creating new partition using fdisk)
-# Run these commands serially
-d
-2
-n
-p
-2
-1048576
-default (just press Enter)
-n
-w
-
-(After cloning is finished..)
-Create new partition again for mmcblk0p2 in same way
-
 Turn it off, unplug everything, power it on normally. Voila! Your device is now ready for daily use.
