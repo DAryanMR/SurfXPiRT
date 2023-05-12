@@ -6,6 +6,11 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+echo "executing wifi-setup.sh"
+echo "Setup your Wi-Fi"
+echo ""
+echo ""
+
 # Get Wi-Fi SSID and PSK from user
 read -p "Enter Wi-Fi SSID: " ssid
 read -p "Enter Wi-Fi PSK: " psk
@@ -60,5 +65,7 @@ echo ""
 echo ""
 
 echo "Wifi connected... "
+sleep 2
+clear
 
 exit 0
