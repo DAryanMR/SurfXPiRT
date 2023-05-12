@@ -7,6 +7,7 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 #####################
+echo "executing clone-disk.sh"
 echo "This script will clone the contents of /dev/mmcblk1 to /dev/mmcblk0."
 echo "Beginning process.."
 #####################
@@ -93,6 +94,8 @@ e2fsck -f /dev/mmcblk0p2
 echo "Resizing filesystem"
 resize2fs /dev/mmcblk0p2
 echo ""
+sleep 3
+clear
 echo "Clone successful."
 echo "Turn off device, remove SD card, and power it on normally. ;) "
 
