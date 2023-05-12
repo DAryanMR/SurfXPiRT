@@ -1,10 +1,8 @@
 #! /bin/bash
 
 # Initial modifications (Resize fs, Update [fstab, hostname, hosts], create_user 'pi')
-
-echo ""
-echo ""
-echo "Delete and create mmcblk1p2 (of atleast 8GB) to proceed installation"
+echo "executing init-fix.sh"
+echo "Deleting and creating mmcblk1p2 (of atleast 8GB) to proceed installation"
 # Resizing the filesystem 
 # Delete and create new mmcblk1p2 using fdisk
 echo "d
@@ -48,6 +46,7 @@ usermod -aG sudo pi
 
 
 echo "All pre-modifications are done"
-echo "Now press ctrl+d to boot into filesystem"
+sleep 2
+clear
 
 exit 0
