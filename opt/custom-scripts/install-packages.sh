@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "executing install-packages.sh"
 set -e
 
 # Upgrade packages
@@ -92,3 +93,5 @@ rm -rf /boot/initrd.img-6.* && rm -rf /boot/vmlinuz-6.*
 update-initramfs -u -k all
 
 echo "Setup complete!"
+sleep 2
+clear
