@@ -1,4 +1,5 @@
 #! /bin/sh
+echo "executing install-vulkan.sh"
 ####################################################################################
 # Install vulkan for hardware acceleration
 # Remove previous install/configs
@@ -18,4 +19,6 @@ echo ""
 echo ""
 echo "Vulkan Installed successfully!"
 ####################################################################################
+sleep 2
+clear
 exit 0
