@@ -3,6 +3,7 @@ Description=My rc.local
 
 [Service]
 ExecStart=/usr/local/bin/on-start.sh
+StandardOutput=journal+console
 
 [Install]
 WantedBy=multi-user.target
