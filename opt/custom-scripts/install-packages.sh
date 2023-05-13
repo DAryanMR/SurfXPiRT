@@ -87,10 +87,6 @@ cp -rf /boot/firmware/opt/lightdm/* /etc/lightdm/
 echo "lightdm configured, autologin set to user 'pi' "
 
 # Generate initrd.img
-echo "Generating initrd.img..."
-cp /boot/firmware/opt/bootloader/zImage /boot/initrd.img-5.17.x.x-armmp
-rm -rf /boot/initrd.img-6.* && rm -rf /boot/vmlinuz-6.*
-update-initramfs -u -k all
 
 echo "Setup complete!"
 sleep 2
