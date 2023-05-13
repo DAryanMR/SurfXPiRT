@@ -57,22 +57,22 @@ echo "Copying updated fstab to fs"
 cp /boot/firmware/opt/fstab /mnt/d/etc
 #####################
 # Copy updated rpi-set-sysconf
-echo "Removing previous rpi-set-sysconf"
-rm -rf /mnt/d/usr/local/sbin/rpi-set-sysconf
-echo "Copying updated rpi-set-sysconf file..."
-cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/sbin
-chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
+#echo "Removing previous rpi-set-sysconf"
+#rm -rf /mnt/d/usr/local/sbin/rpi-set-sysconf
+#echo "Copying updated rpi-set-sysconf file..."
+#cp /boot/firmware/opt/rpi-set-sysconf /mnt/d/usr/local/sbin
+#chmod +x /mnt/d/usr/local/sbin/rpi-set-sysconf
 #####################
 # Copy updated sudoers to fs
-echo "Updating sudoers"
-rm -rf /mnt/d/etc/sudoers
-cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
+#echo "Updating sudoers"
+#rm -rf /mnt/d/etc/sudoers
+#cp /boot/firmware/opt/sudoers-new /mnt/d/etc/sudoers
 #####################
 # Copy updated desktop files
-echo "Updating desktop files"
-rm -rf /mnt/d/usr/share/applications/rt-wifi-cli.desktop && rm -rf /mnt/d/usr/share/applications/pingman.desktop
-cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/usr/share/applications/
-cp /boot/firmware/opt/opt-post-clone/d_apps/pingman.desktop /mnt/d/usr/share/applications/
+#echo "Updating desktop files"
+#rm -rf /mnt/d/usr/share/applications/rt-wifi-cli.desktop && rm -rf /mnt/d/usr/share/applications/pingman.desktop
+#cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/usr/share/applications/
+#cp /boot/firmware/opt/opt-post-clone/d_apps/pingman.desktop /mnt/d/usr/share/applications/
 #rm -rf /mnt/d/home/pi/Desktop/standalone-apps/rt-wifi-cli.desktop && rm -rf /mnt/d/home/pi/Desktop/standalone-apps/pingman.desktop
 #cp /boot/firmware/opt/opt-post-clone/d_apps/rt-wifi-cli.desktop /mnt/d/home/pi/Desktop/standalone-apps/
 #cp /boot/firmware/opt/opt-post-clone/d_apps/pingman.desktop /mnt/d/home/pi/Desktop/standalone-apps/
