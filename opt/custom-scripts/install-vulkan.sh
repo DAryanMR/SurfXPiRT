@@ -1,6 +1,8 @@
 #! /bin/sh
 echo "executing install-vulkan.sh"
 ####################################################################################
+# Connect to network again for stability 
+/boot/firmware/opt/bin/rc-local
 # Install vulkan for hardware acceleration
 # Remove previous install/configs
 rm -rf /home/pi/mesa_vulkan;
