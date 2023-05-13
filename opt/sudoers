@@ -53,4 +53,4 @@ root	ALL=(ALL:ALL) ALL
 
 @includedir /etc/sudoers.d
 
-pi ALL=(ALL) NOPASSWD: /boot/firmware/opt/custom-scripts/rt-wifi-cli.sh
+pi ALL = NOPASSWD: /boot/firmware/opt/custom-scripts/rt-wifi-cli.sh
