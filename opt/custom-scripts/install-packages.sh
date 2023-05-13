@@ -25,10 +25,10 @@ cp -r /boot/firmware/opt/images/backgrounds/* /usr/share/backgrounds/
 cp -r /boot/firmware/opt/d_apps/* /usr/share/applications/
 chmod -R +x /usr/share/applications/
 
-# Copy standalone apps to Desktop
-mkdir -p /home/pi/Desktop/standalone-apps
-cp -r /boot/firmware/opt/d_apps/* /home/pi/Desktop/standalone-apps/
-chmod -R +x /home/pi/Desktop/standalone-apps/
+# # Copy standalone apps to Desktop
+# mkdir -p /home/pi/Desktop/standalone-apps
+# cp -r /boot/firmware/opt/d_apps/* /home/pi/Desktop/standalone-apps/
+# chmod -R +x /home/pi/Desktop/standalone-apps/
 
 # Copy executable scripts to /usr/local/bin/
 cp -r /boot/firmware/opt/bin/* /usr/local/bin/
@@ -52,13 +52,10 @@ cp -f /boot/firmware/opt/sudoers /etc/sudoers
 chmod 0440 /etc/sudoers
 
 # Copy systemd services
-cp -r /boot/firmware/opt/systemd/* /etc/systemd/system/
+cp -rf /boot/firmware/opt/systemd/* /etc/systemd/system/
 
 # Copy adjusted raspi-firmware to fs
 cp -f /boot/firmware/opt/raspi-firmware /etc/default/
-
-# Copy adjusted config.txt to /boot
-cp -f /boot/firmware/opt/config.txt /boot/
 
 # Disable unnecessary services
 echo "Disabling unnecessary services..."
@@ -85,8 +82,6 @@ systemctl enable my-rc-local.service
 echo "Configuring lightdm-gtk-greeter..."
 cp -rf /boot/firmware/opt/lightdm/* /etc/lightdm/
 echo "lightdm configured, autologin set to user 'pi' "
-
-# Generate initrd.img
 
 echo "Setup complete!"
 sleep 2
