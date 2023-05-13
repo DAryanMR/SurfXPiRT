@@ -135,34 +135,52 @@ network={{
 
     # ADD THIS FUNCTION TO THE CLASS TO HANDLE AUTO-CONNECT FUNCTIONALITY
     def auto_connect(self):
-        result = messagebox.askyesno("Confirmation", "Are you sure you want to auto-connect?")
+        result = messagebox.askyesno(
+            "Confirmation", "Are you sure you want to auto-connect?")
         if result:
-            try:
-                # Run the custom rc-local
-                subprocess.run(["sudo", "rc-local"])
-                # Obtain IP address
-                #subprocess.run(["sudo", "dhclient", "mlan0"])
-                # Store current IP address
-                ip_before = subprocess.check_output(['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
-                output = subprocess.check_output(["sudo", "iw", "dev", "mlan0", "link"])
-                # Check if IP address has changed
-                ip_after = subprocess.check_output(['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
-                if ip_before != ip_after:
-                    messagebox.showinfo("Auto Connect Successful",
-                                        f"Connected to local network")
-                else:
-                    # Check if the network is reachable
-                    #ping_output = subprocess.check_output(["ping", "-c", "1", ssid]).decode()
-                    ping_output = subprocess.check_output(["ping", "8.8.8.8"]).decode()
-                    if "100% packet loss" in ping_output:
-                        messagebox.showerror(
-                            "Connection Failed", "Unable to connect to the selected network")
-            except subprocess.CalledProcessError:
-                messagebox.showerror(
-                    "Connection Failed", "Unable to connect to the selected network")
+            max_attempts = 3
+            attempt_count = 0
+            while attempt_count < max_attempts:
+                try:
+                    # Run the custom rc-local
+                    subprocess.run(["sudo", "rc-local"])
+                    # Obtain IP address
+                    #subprocess.run(["sudo", "dhclient", "mlan0"])
+                    # Store current IP address
+                    ip_before = subprocess.check_output(
+                        ['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
+                    output = subprocess.check_output(
+                        ["sudo", "iw", "dev", "mlan0", "link"])
+                    # Check if IP address has changed
+                    ip_after = subprocess.check_output(
+                        ['sudo', 'ip', 'addr', 'show', 'mlan0']).decode()
+                    if ip_before != ip_after:
+                        messagebox.showinfo(
+                            "Auto Connect Successful", f"Connected to local network")
+                        self.master.destroy()
+                        return
+                    else:
+                        # Check if the network is reachable
+                        #ping_output = subprocess.check_output(["ping", "-c", "1", ssid]).decode()
+                        ping_output = subprocess.check_output(
+                            ["ping", "8.8.8.8"]).decode()
+                        if "100% packet loss" not in ping_output:
+                            messagebox.showinfo(
+                                "Auto Connect Successful", f"Connected to local network")
+                            self.master.destroy()
+                            return
+                except subprocess.CalledProcessError:
+                    pass
+                
+                attempt_count += 1
+            
+            # If all attempts fail, show an error message
+            messagebox.showerror(
+                "Connection Failed", "Unable to connect to the local network")
             
             # Close the main window
             self.master.destroy()
+
 
 root = tk.Tk()
 wifi_scanner = WiFiScanner(root)

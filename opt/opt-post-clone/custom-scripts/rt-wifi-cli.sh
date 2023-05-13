@@ -4,6 +4,6 @@
 rfkill unblock wifi
 
 # Run rt-wifi-client
-python3 /boot/opt/custom-scripts/rt-wifi-cli.py
+python3 /boot/firmware/opt/custom-scripts/rt-wifi-cli.py
 
 exit 0
