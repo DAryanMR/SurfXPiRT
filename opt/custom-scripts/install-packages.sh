@@ -83,6 +83,16 @@ echo "Configuring lightdm-gtk-greeter..."
 cp -rf /boot/firmware/opt/lightdm/* /etc/lightdm/
 echo "lightdm configured, autologin set to user 'pi' "
 
+# Configure touchscreen
+# copy xorg config
+# .. (add here)
+# prevent other processes from interfering 
+# with the touchscreen
+groupadd touchscreen
+usermod -aG touchscreen pi
+chgrp touchscreen /dev/input/event3
+chmod g+r /dev/input/event3
+
 echo "Setup complete!"
 sleep 2
 clear
