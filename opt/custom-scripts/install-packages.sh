@@ -84,8 +84,28 @@ cp -rf /boot/firmware/opt/lightdm/* /etc/lightdm/
 echo "lightdm configured, autologin set to user 'pi' "
 
 # Configure touchscreen
-# copy xorg config
-# .. (add here)
+# modify xorg config
+# Setup touchscreen
+bash -c 'cat << EOF > /etc/X11/xorg.conf
+Section "InputClass"
+    Identifier "libinput touchscreen catchall"
+    MatchIsPointer "on"
+    MatchDevicePath "/dev/input/event3"
+    Driver "libinput"
+    Option "Tapping" "off"
+    Option "IdleTimeout" "-1"
+EndSection
+EOF'
+# Prevent touchpad from interfering
+bash -c 'cat << EOF > /etc/X11/xorg.conf.d/30-touchpad.conf
+Section "InputClass"
+    Identifier "libinput touchpad catchall"
+    MatchIsTouchpad "on"
+    Option "Ignore" "true"
+    Option "Tapping" "off"
+    Option "DisableWhileTyping" "true"
+EndSection
+EOF'
 # prevent other processes from interfering 
 # with the touchscreen
 groupadd touchscreen
