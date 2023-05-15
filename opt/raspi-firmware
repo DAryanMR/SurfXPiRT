@@ -107,5 +107,5 @@ GPU_FREQ="auto"
 # them in "/etc/default/raspi-extra-cmdline". Keep in mind they should be
 # all in a single line, no comments!
 
-dtoverlay=vc4-kms-v3d
+#dtoverlay=vc4-kms-v3d
 #gpu_mem=256
