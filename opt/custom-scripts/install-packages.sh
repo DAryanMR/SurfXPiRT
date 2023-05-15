@@ -56,6 +56,8 @@ cp -rf /boot/firmware/opt/systemd/* /etc/systemd/system/
 
 # Copy adjusted raspi-firmware to fs
 cp -f /boot/firmware/opt/raspi-firmware /etc/default/
+# update initramfs
+update-initramfs -u -k all
 
 # Disable unnecessary services
 echo "Disabling unnecessary services..."
