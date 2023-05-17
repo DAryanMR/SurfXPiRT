@@ -12,6 +12,7 @@ Supported features: WiFi, Bluetooth, HWA, Audio Output, VLC, WebGL, Responsive T
 Pre-requisites: Golden Keys & Yahallo Installed (Secure boot disabled)
 
 Debian 12 Installation Tutorial: https://www.youtube.com/watch?v=RKzyT7Vtjrs
+(This is almost like a really how to install linux on surface rt, it'd be best to run SurfUpXplosion (one-command-installer, mentioned in walkthrough.txt) as you don't have to modify anything, you can simply boot from your eMMC afterwards) ;)
 
 Official Debian 12 (Bookworm) Raspberry Pi Image: https://raspi.debian.net/tested/20230102_raspi_2_bookworm.img.xz
 
