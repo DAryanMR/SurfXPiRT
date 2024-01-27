@@ -4,8 +4,8 @@ echo "executing install-packages.sh"
 set -e
 
 # Upgrade packages
-#echo "Upgrading packages..."
-#apt update && apt upgrade -y
+echo "Upgrading packages..."
+apt update && apt upgrade -y
 
 # Install necessary packages
 echo "Installing packages..."
