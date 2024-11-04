@@ -55,26 +55,26 @@ chmod 0440 /etc/sudoers
 cp -rf /boot/firmware/opt/systemd/* /etc/systemd/system/
 
 # Copy adjusted raspi-firmware to fs
-cp -f /boot/firmware/opt/raspi-firmware /etc/default/
+#cp -f /boot/firmware/opt/raspi-firmware /etc/default/
 # update initramfs
-update-initramfs -u -k all
+#update-initramfs -u -k all
 
 # Disable unnecessary services
-echo "Disabling unnecessary services..."
-systemctl disable rc-local.service
-systemctl mask systemd-binfmt.service
+#echo "Disabling unnecessary services..."
+#systemctl disable rc-local.service
+#systemctl mask systemd-binfmt.service
 
 # Reload system daemons
-echo "Reloading system daemons..."
-systemctl daemon-reload
+#echo "Reloading system daemons..."
+#systemctl daemon-reload
 
 # Enable systemd-networkd service
 echo "Enabling systemd-networkd service..."
 systemctl enable systemd-networkd.service
 
 # Enable wpa_supplicant service
-echo "Enabling wpa_supplicant service..."
-systemctl enable wpa_supplicant.service
+#echo "Enabling wpa_supplicant service..."
+#systemctl enable wpa_supplicant.service
 
 # Enable custom rc-local
 echo "Enabling my-rc-local service..."
