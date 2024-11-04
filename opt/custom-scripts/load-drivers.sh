@@ -2,8 +2,8 @@
 
 echo "executing load-drivers.sh"
 # Run pre-driver script first
-echo "Running pre-driver script"
-sh /boot/firmware/opt/custom-scripts/pre-driver.sh
+#echo "Running pre-driver script"
+#sh /boot/firmware/opt/custom-scripts/pre-driver.sh
 
 # Then run post-driver script
 echo "Running post-driver script"
