@@ -37,7 +37,7 @@ network_block="network={
 echo "$network_block" | tee -a /etc/wpa_supplicant/wpa_supplicant.conf > /dev/null;
 
 # Reload wpa_sup
-systemctl restart wpa_supplicant.service
+#systemctl restart wpa_supplicant.service
 
 # Unblock wifi if you have to
 rfkill unblock wifi;
