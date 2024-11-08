@@ -69,8 +69,8 @@ cp -rf /boot/firmware/opt/systemd/* /etc/systemd/system/
 #systemctl daemon-reload
 
 # Enable systemd-networkd service
-echo "Enabling systemd-networkd service..."
-systemctl enable systemd-networkd.service
+#echo "Enabling systemd-networkd service..."
+#systemctl enable systemd-networkd.service
 
 # Enable wpa_supplicant service
 #echo "Enabling wpa_supplicant service..."
