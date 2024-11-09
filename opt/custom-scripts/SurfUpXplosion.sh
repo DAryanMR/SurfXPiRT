@@ -32,8 +32,8 @@ sh /boot/firmware/opt/custom-scripts/install-packages.sh
 check_status
 
 # Installing Vulkan drivers (For HWA)
-sh /boot/firmware/opt/custom-scripts/install-vulkan.sh
-check_status
+#sh /boot/firmware/opt/custom-scripts/install-vulkan.sh
+#check_status
 
 # Cloning Disk to eMMC (Who'd use a flash stick and sd card to fire it up everytime)
 sh /boot/firmware/opt/custom-scripts/clone-disk.sh
