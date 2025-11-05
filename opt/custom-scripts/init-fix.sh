@@ -10,7 +10,7 @@ echo "d
 n
 p
 2
-1056768
+1064960
 
 w" | fdisk /dev/mmcblk1
 # Assuming that you have created the new partition
