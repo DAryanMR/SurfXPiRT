@@ -80,19 +80,19 @@ cp /boot/firmware/opt/fstab /mnt/d/etc
 echo "Unmounting /dev/mmcblk0p2 ..."
 umount /dev/mmcblk0p2
 # Resize fs 
-echo "Create new mmcblk0p2 partition"
-echo "d
-2
-n
-p
-2
-1064960
+#echo "Create new mmcblk0p2 partition"
+#echo "d
+#2
+#n
+#p
+#2
+#1064960
 
-w" | fdisk /dev/mmcblk0
-echo "Checking for errors"
-e2fsck -f /dev/mmcblk0p2
-echo "Resizing filesystem"
-resize2fs /dev/mmcblk0p2
+#w" | fdisk /dev/mmcblk0
+#echo "Checking for errors"
+#e2fsck -f /dev/mmcblk0p2
+#echo "Resizing filesystem"
+#resize2fs /dev/mmcblk0p2
 echo ""
 sleep 3
 clear
